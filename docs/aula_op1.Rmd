@@ -108,9 +108,20 @@ knitr::include_graphics('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzNkYT
 
 &#10004; Análise de experimentos
 
-```{r , echo=FALSE, fig.align = 'right', out.width = '50%'}
+&#128187; *Software* R 
+
+.pull-left[
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics('figuras/tarefa.jpg')
+```
+
+]
+.pull-right[
+```{r , echo=FALSE, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics('https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif')
 ```
+]
 
 ---
 
@@ -130,14 +141,6 @@ knitr::include_graphics('figuras/fig9.jpg')
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '35%'}
 knitr::include_graphics('figuras/fig8.jpg')
-```
-
----
-
-# *Software* R &#128187;
-
-```{r , echo=FALSE, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics('figuras/tarefa.jpg')
 ```
 
 ---
