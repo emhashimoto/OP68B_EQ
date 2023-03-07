@@ -193,7 +193,7 @@ em que $NR$ é a nota da prova de recuperação.
 
 ---
 
-# Cópia de provas (e/ou *internet*) e falsidade
+# Cópia de trabalhos (e/ou *internet*) é falsidade
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
 knitr::include_graphics('https://media.giphy.com/media/SRqTQmbYdm5jgS7xH9/giphy.gif
@@ -269,7 +269,7 @@ class: center, middle
 </fieldset>
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+knitr::include_graphics('https://media.giphy.com/media/yv1ggi3Cbase05a8iS/giphy.gif')
 ```
 
 ---
@@ -285,7 +285,7 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 </fieldset>
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+knitr::include_graphics('https://media.giphy.com/media/yv1ggi3Cbase05a8iS/giphy.gif')
 ```
 
 ---
@@ -298,8 +298,8 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
  pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.</font>
 </fieldset>
 
-```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.gif')
 ```
 
 ---
@@ -311,8 +311,8 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
    ciência que se dedica a coleta, análise e interpretação dos dados.
 </fieldset>
 
-```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.gif')
 ```
 
 <br>
@@ -328,32 +328,65 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 
 ---
 
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estatística
+  </legend>
+   ciência que se dedica a coleta, análise e interpretação dos dados.
+</fieldset>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.gif')
+```
+
+<br>
+
+
+<fieldset class="fldsetalert-class">
+  <legend class="legendalert-class">
+    Qual o papel da Estatística na Engenharia?
+  </legend>
+
+ Fornecer **métodos estatísticos** para engenharia tomar decisões e resolver problemas.
+</fieldset>
+
+---
+
 O **método científico** consiste na aplicação iterativa dos seguintes passos:
 
+--
 
-.pull-left[
+- Observar o **estado da natureza**;
 
-]
-.pull-right[
-```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+<br>
+
+--
+
+- **conjecturar** o fenômeno para o que foi observado;
+
+<br>
+
+--
+
+- coletar os **dados**;
+
+<br>
+
+--
+
+- **analisar** os dados para confirmar ou rejeitar a conjectura.
+
+<br>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '35%'}
+knitr::include_graphics('figuras/metodo.jpg')
 ```
-]
 
 ---
 
-Os dados, geralmente, são coletados por meio de:
+Os dados, geralmente, são **coletados** por meio de:
 
-.pull-left[
-
-]
-.pull-right[
-```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
-```
-]
-
----
+--
 
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
@@ -364,13 +397,14 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 </fieldset>
 
 ---
+Os dados, geralmente, são **coletados** por meio de:
 
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
     Levantamento
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ utilizada quando o objetivo da coleta de dados é estimar alguma propriedade de uma população finita.
 </fieldset>
 
 <br>
@@ -387,12 +421,14 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 
 ---
 
+Os dados, geralmente, são **coletados** por meio de:
+
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
     Levantamento
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ utilizada quando o objetivo da coleta de dados é estimar alguma propriedade de uma população finita.
 </fieldset>
 
 <br>
@@ -403,7 +439,7 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
     Estudo observacional
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
@@ -420,12 +456,14 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 
 ---
 
+Os dados, geralmente, são **coletados** por meio de:
+
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
     Levantamento
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ utilizada quando o objetivo da coleta de dados é estimar alguma propriedade de uma população finita.
 </fieldset>
 
 <br>
@@ -436,7 +474,7 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
     Estudo observacional
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
@@ -445,17 +483,19 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
   <legend class="legendexample-class">
     Experimentos
   </legend>
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. 
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em um **ambiente controlado**.
 </fieldset>
 
 ---
+
+Os dados, geralmente, são **coletados** por meio de:
 
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
     Levantamento
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ utilizada quando o objetivo da coleta de dados é estimar alguma propriedade de uma população finita.
 </fieldset>
 
 <br>
@@ -466,7 +506,7 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
     Estudo observacional
   </legend>
 
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual.  Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
@@ -475,12 +515,68 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
   <legend class="legendalert-class">
     Experimentos
   </legend>
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. Os dados são observados em um **ambiente controlado**. 
 </fieldset>
 
 ---
 
 # Experimentos estatisticamente planejados
+
+Em experimentação, o **planejamento cuidadoso** e **execução** do plano são passos muito importantes.
+
+--
+
+.pull-left[
+&#10004; Fisher teve as ideias para planejamento e análise de experimentos usadas como base para validade inferencial.
+]
+.pull-right[
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('figuras/fisher.jpg')
+```
+]
+
+--
+
+&#128680; **Desafios**:
+
+- grande quantidade de variação;
+
+--
+
+- experimentos eram caros e demorados.
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Motivação de Fisher
+  </legend>
+
+ encontrar técnicas que podem:
+</fieldset>
+
+--
+
+- eliminar o máximo possível de variação natural.
+
+<br>
+
+--
+
+- evitar que variações não removidas confundam ou viciem os efeitos que estão sendo testados.
+
+<br>
+
+--
+
+- detectar causa e efeito.
+
+---
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics('figuras/passos.jpg')
+```
 
 ---
 
