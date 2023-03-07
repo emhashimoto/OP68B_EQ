@@ -4,7 +4,7 @@ subtitle: "Teoria e Prática &#10024;"
 author: "Profa. Patricia e Profa. Elizabeth"
 output:
   xaringan::moon_reader:
-    css: [default, default-fonts, meu-tema-op.css]
+    css: [default, default-fonts, meu-tema-op.css, box.css]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -254,6 +254,241 @@ knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
 
 class: center, middle
 
-# Introdução à planejamento de experimentos
+# Introdução
 
 ---
+
+# O papel da Estatística em Engenharia
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Engenheiro
+  </legend>
+ <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.</font>
+</fieldset>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+
+---
+
+# O papel da Estatística em Engenharia
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Engenheiro
+  </legend>
+  
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estatística
+  </legend>
+ <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.</font>
+</fieldset>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estatística
+  </legend>
+   ciência que se dedica a coleta, análise e interpretação dos dados.
+</fieldset>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+
+<br>
+--
+
+<fieldset class="fldsetalert-class">
+  <legend class="legendalert-class">
+    Qual o papel da Estatística na Engenharia?
+  </legend>
+  <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos</font>
+</fieldset>
+
+---
+
+O **método científico** consiste na aplicação iterativa dos seguintes passos:
+
+
+.pull-left[
+
+]
+.pull-right[
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+]
+
+---
+
+Os dados, geralmente, são coletados por meio de:
+
+.pull-left[
+
+]
+.pull-right[
+```{r , echo=FALSE, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics('https://media.giphy.com/media/IoP0PvbbSWGAM/giphy.gif')
+```
+]
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Levantamento
+  </legend>
+ <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos</font>
+</fieldset>
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Levantamento
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+--
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estudo observacional
+  </legend>
+ <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos</font>
+</fieldset>
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Levantamento
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estudo observacional
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+--
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Experimentos
+  </legend>
+ <font color="white"> 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos</font>
+</fieldset>
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Levantamento
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estudo observacional
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Experimentos
+  </legend>
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. 
+</fieldset>
+
+---
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Levantamento
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+
+<fieldset class="fldsetexample-class">
+  <legend class="legendexample-class">
+    Estudo observacional
+  </legend>
+
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos.
+</fieldset>
+
+<br>
+
+<fieldset class="fldsetalert-class">
+  <legend class="legendalert-class">
+    Experimentos
+  </legend>
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. 
+</fieldset>
+
+---
+
+# Experimentos estatisticamente planejados
+
+---
+
+# Próxima aula
+
+
+<div id="caixa">
+ <div>Conceitos básicos de planejamento de experimentos.
+ </div>
+</div>
+
