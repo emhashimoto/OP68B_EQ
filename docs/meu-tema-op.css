@@ -1,0 +1,31 @@
+/* Remover o contador de paginas do primeiro slide */
+.title-slide .remark-slide-number {
+  display: none;
+}
+/* Figura de plano de fundo  */
+.title-slide {
+  background-image: url(figuras/fundo1.png);
+  background-size: 100% 100%;
+  background-color: white;
+}
+
+/* cor da letra dos títulos  */
+.title-slide h1{
+  color: black;
+  font-size: 3em;
+  padding-top: 1.5em;
+  text-align: center;
+}
+.title-slide h2{
+  color: black;
+  font-size: 2.5em;
+  padding-top: 0.5em;
+  text-align: center;
+}
+.title-slide h3{
+  color: black;
+  text-shadow: none;
+  font-size: 2em;
+  padding-top: 2em;
+  text-align: center;
+}
