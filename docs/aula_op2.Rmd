@@ -121,7 +121,7 @@ knitr::include_graphics('figuras/ue.jpg')
 # &#9989; Unidade observacional
 
 <div id="caixa2">
-   É cada parte da divisão da unidade experimental, onde é observado ou medido os dados do experimento.
+   É a unidade onde observa-se ou mede-se os dados do experimento.
 </div>
 
 ---
@@ -200,6 +200,11 @@ class: center, middle
 Em um projeto experimental bem planejado, o efeito dessas variáveis ocultas deve se equilibrar para não alterar a conclusão de um estudo.
 -->
 
+```{r, echo=FALSE, fig.align = 'center', out.width = '45%'}
+knitr::include_graphics('figuras/espuria.jpg')
+```
+<p style="font-size: 50%;"><center>Fonte: CHG Integrated Wealth</center></p>
+
 ---
 
 class: center, middle
@@ -216,23 +221,67 @@ De acordo com o enunciado identifique:
 
 - o fator e seus níveis;
 
+- o fator de incômodo, se houver;
+
 - a variável resposta.
+
+---
+
+# Exercício 1 &#9997;
+
+Um experimento foi feito para determinar o efeito de quatro produtos  químicos diferentes sobre a resistência de um tecido. Esses produtos químicos são usados como parte do processo de acabamento, sob prensagem permanente. Além disso, cinco amostra de tecidos foram selecionadas e testando cada tipo de produto químico uma vez, em uma ordem aleatória, em cada amostra de tecido.
 
 ---
 
 # Exercício 2 &#9997;
 
-De acordo com o enunciado, classifique o fator em:
+De acordo com o enunciado, identifique e classifique o fator em:
 
 - efeito aleatório ou 
 
-- efeito fixo.
+- efeito fixo,
+
+justifique a classificação.
+
+---
+
+# Exercício 2 &#9997;
+
+a) Um experimento foi realizado para avaliar a resistência do concreto à compressão em função de quatro técnicas diferentes de misturas.
+
+<br>
+
+b) Um artigo na revista *Journal of Quality Technology* descreve um experimento que investiga os efeitos, no brilho da polpa, de quatro produtos químicos de branqueamento. Esses quatro produtos químicos foram selecionados ao acaso, a partir de uma população de agentes potenciais para o branqueamento.
 
 ---
 
 # Exercício 3 &#9997;
 
 De acordo com o enunciado, identifique a unidade experimental e caso haja, a unidade observacional.
+
+---
+
+# Exercício 3 &#9997;
+
+a) Um experimento foi conduzido para determinar se quatro temperaturas específicas de queima afetam a densidade de um certo tipo de tijolo. 
+
+b) Um experimento foi conduzido para avaliar o efeito de três tipos de adubação sobre a quantidade de massa seca de raiz de uma determinada hortaliça. Nestas condições, uma horta foi divida em nove quadrados de igual tamanho e em cada quadrado, de forma aleatória, foi aplicado a abubação. Ao final do estudo, dez hortalicas foram retiradas de cada quadrado para avaliar a quantidade de massa seca.
+
+---
+
+# Referências &#128218;
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('figuras/fig8.jpg')
+```
+
+---
+
+# Referências &#128218;
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics('figuras/fig7.jpg')
+```
 
 ---
 
