@@ -66,7 +66,6 @@
   display: inline-block;
   margin:10px auto;
   font-family:Open Sans;
-  font-style:italic;
   color: #555555;
   padding: 1.2em 30px 1.2em 75px;
   border-left: 8px solid #006DAE ;
@@ -77,7 +76,6 @@
 
 .blockquote::before{
   font-family: Arial;
-  content: "\201C";
   color: #006DAE;
   font-size: 4em;
   position: absolute;
@@ -233,20 +231,21 @@
 .legendblock-class {
     color: #006DAE;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .fldsetexample-class {
     border: 2px solid green;
     margin: 3pt;
-    border-top: 15px solid green;
+    border-top: 25px solid green;
     box-shadow: 5px 5px #888888;
+    font-size: 20pt;
 }
 
 .legendexample-class {
     color: green;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .fldsetalert-class {
@@ -259,5 +258,5 @@
 .legendalert-class {
     color: #EE0220;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }

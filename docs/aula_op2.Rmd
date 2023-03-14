@@ -1,6 +1,6 @@
 ---
 title: "OP68B - Planejamento e análise de experimentos"
-subtitle: "Conceitos básicos &#10024;" 
+subtitle: "Conceitos básicos" 
 author: "Profa. Patricia e Profa. Elizabeth"
 output:
   xaringan::moon_reader:
@@ -23,10 +23,17 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 <style> 
-#caixa {
+#caixa1 {
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px blue;
+  font-size: 20pt;
+}
+#caixa2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px green;
+  font-size: 20pt;
 }
 div {
   text-align: justify;
@@ -35,15 +42,168 @@ div {
 </style>
 
 
-# Erro experimental
+# Objetivo da Aula &#127919;
+
+.pull-left[
+```{r , echo=FALSE, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics('https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.gif')
+```
+]
+.pull-right[
+
+&#128309; Apresentar os <b>termos chaves</b>.
+{{content}}
+]
+
+--
+
+&#128309; Exercícios para aplicar os conceitos aprendidos.
+
+---
+
+# Importância do Planejamento &#10024;
+
+o Planejamento de Experimentos é um **conjunto de ferramentas** essenciais para:
+
+--
+
+- otimização de processos, 
+
+--
+
+- desenvolvimento de novos produtos,
+
+--
+
+- melhoria da qualidade dos produtos existentes, 
+
+--
+
+reduzindo o tempo &#9201; e custo de desenvolvimento  &#128176;.
+
+---
+
+class: center, middle
+
+# Principais termos utilizados em planejamento de experimentos
+
+---
+
+# &#9989; Experimento (*run*)
+
+<div id="caixa2">
+   É uma ação em que o pesquisador muda pelo menos uma das variáveis que estão sendo estudadas e então observa ps efeito  de suas ações.
+</div>
+
+---
+
+# &#9989; Unidade experimental
+
+<div id="caixa2">
+   É o item em estudo sobre o qual algo é alterado, ou seja, é o que recebe ou contém o tratamento.
+</div>
+
+---
+
+# &#9989; Variável independente
+
+<div id="caixa2">
+   É uma das variáveis em estudo que está sendo controlada.
+</div>
+    	
+---
+
+# &#9989; Níveis
+
+<div id="caixa2">
+   São as categorias (divisões) do fator.
+</div>
+
+<!--
+O nível está sendo alterado de forma sistemática de execução para execução, a fim de determinar o efeito que tem na(s) resposta(s)
+-->
+
+---
+
+# &#9989; Variável dependente
+
+<div id="caixa2">
+   É a característica da unidade experimental que é medida após cada experimento.
+</div>
+
+---
+
+# &#9989; Unidade observacional
+
+<div id="caixa2">
+   Quando a unidade experimental é dividida, cada divisão é chamada de unidade observacional.
+</div>
+    	
+
+---
+
+# &#9989; Erro experimental 
+
+<div id="caixa2">
+   É uma das variáveis em estudo que está sendo controlada.
+</div>
+
+---
+
+# Exercício 1
+
+De acordo com o enunciado identifique:
+
+- a unidade experimental;
+
+- o fator e seus níveis;
+
+- a variável resposta.
+
+---
+
+# Exercício 2
+
+De acordo com o enunciado, classifique o fator em:
+
+- efeito aleatório ou 
+
+- efeito fixo.
+
+---
+
+# Exercício 3
+
+De acordo com o enunciado, identifique a unidade experimental e caso haja, a unidade observacional.
+
+
+---
+
+# Fatores de confundimento
+
+<div id="caixa2">
+   Surgem quando cada alteração que um experimentador faz em um fator, entre as execuções, é acoplada a uma alteração idêntica em outro fator. Nesta situação, é impossível determinar qual fator causa quaisquer mudanças observadas na resposta ou na variável dependente.
+</div>
+
+---
+
+# Variáveis de confusão
+
+<div id="caixa2">
+   É uma variável que o experimentador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. Em um projeto experimental bem planejado, o efeito dessas variáveis ocultas deve se equilibrar para não alterar a conclusão de um estudo.
+</div>
 
 ---
 
 # Próxima aula
 
 
-<div id="caixa">
+<div id="caixa1">
  <div>Princípios básicos da experimentação
  </div>
 </div>
 
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RkMjg1YTgwMjNhNjg5YTVjNTRlOTc0ZDc5ZmVhNGQ3NDEyMTBkYyZjdD1n/lD76yTC5zxZPG/giphy.gif')
+```
