@@ -347,7 +347,7 @@ knitr::include_graphics('https://media.giphy.com/media/LaVp0AyqR5bGsC5Cbm/giphy.
     Qual o papel da Estatística na Engenharia?
   </legend>
 
- Fornecer <b>métodos estatísticos</b> para engenharia tomar decisões e resolver problemas.
+ Fornecer **métodos estatísticos** para engenharia tomar decisões e resolver problemas.
 </fieldset>
 
 ---
@@ -439,7 +439,7 @@ Os dados, geralmente, são **coletados** por meio de:
     Estudo observacional
   </legend>
 
- são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu <b>ambiente natural</b>.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
@@ -474,7 +474,7 @@ Os dados, geralmente, são **coletados** por meio de:
     Estudo observacional
   </legend>
 
- são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu <b>ambiente natural</b>.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
@@ -483,12 +483,12 @@ Os dados, geralmente, são **coletados** por meio de:
   <legend class="legendexample-class">
     Experimentos
   </legend>
- são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em um <b>ambiente controlado</b>.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual. Os dados são observados em um **ambiente controlado**.
 </fieldset>
 
 ---
 
-Os dados, geralmente, são <b>coletados</b> por meio de:
+Os dados, geralmente, são **coletados** por meio de:
 
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
@@ -500,22 +500,22 @@ Os dados, geralmente, são <b>coletados</b> por meio de:
 
 <br>
 
+
 <fieldset class="fldsetexample-class">
   <legend class="legendexample-class">
     Estudo observacional
   </legend>
 
- são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual.  Os dados são observados em seu <b>ambiente natural</b>.
+ são normalmente utilizados para determinar a relação entre duas ou mais quantidades medidas em uma população conceitual.  Os dados são observados em seu **ambiente natural**.
 </fieldset>
 
 <br>
-
 
 <fieldset class="fldsetalert-class">
   <legend class="legendalert-class">
     Experimentos
   </legend>
- pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. Os dados são observados em um <b>ambiente controlado</b>. 
+ pessoa que resolve problemas de interesse da sociedade, pela aplicação eficiente dos princípios científicos. Os dados são observados em um **ambiente controlado**. 
 </fieldset>
 
 ---
