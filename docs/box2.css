@@ -231,7 +231,7 @@
 .legendblock-class {
     color: #006DAE;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .fldsetexample-class {
@@ -239,12 +239,13 @@
     margin: 3pt;
     border-top: 25px solid green;
     box-shadow: 5px 5px #888888;
+    font-size: 20pt;
 }
 
 .legendexample-class {
     color: green;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .fldsetalert-class {
@@ -257,5 +258,5 @@
 .legendalert-class {
     color: #EE0220;
     font-family: 'Boogaloo', cursive;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }

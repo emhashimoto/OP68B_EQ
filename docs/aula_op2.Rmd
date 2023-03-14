@@ -4,7 +4,7 @@ subtitle: "Conceitos básicos"
 author: "Profa. Patricia e Profa. Elizabeth"
 output:
   xaringan::moon_reader:
-    css: [default, default-fonts, meu-tema-op.css, box.css]
+    css: [default, default-fonts, meu-tema-op2.css, box2.css]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -41,6 +41,9 @@ div {
 }
 </style>
 
+# Aula Passada
+
+---
 
 # Objetivo da Aula &#127919;
 
@@ -77,10 +80,6 @@ o Planejamento de Experimentos é um **conjunto de ferramentas** essenciais para
 
 - melhoria da qualidade dos produtos existentes, 
 
---
-
-reduzindo o tempo &#9201; e custo de desenvolvimento  &#128176;.
-
 ---
 
 class: center, middle
@@ -89,10 +88,16 @@ class: center, middle
 
 ---
 
-# &#9989; Experimento (*run*)
+# &#9989; Experimento
 
+<!---
 <div id="caixa2">
    É uma ação em que o pesquisador muda pelo menos uma das variáveis que estão sendo estudadas e então observa ps efeito  de suas ações.
+</div>
+-->
+
+<div id="caixa2">
+   É uma série de execuções (<i>run</i>) nas quais mudanças intencionais são feitas nas variáveis que estão sendo estudadas para que possamos observar as alterações sobre a variável de saída.
 </div>
 
 ---
@@ -100,15 +105,31 @@ class: center, middle
 # &#9989; Unidade experimental
 
 <div id="caixa2">
-   É o item em estudo sobre o qual algo é alterado, ou seja, é o que recebe ou contém o tratamento.
+   É o item do estudo sobre o qual algo é alterado.
+</div>
+
+--
+
+<br>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '120%'}
+knitr::include_graphics('figuras/ue.jpg')
+```
+
+---
+
+# &#9989; Unidade observacional
+
+<div id="caixa2">
+   É cada parte da divisão da unidade experimental, onde é observado ou medido os dados do experimento.
 </div>
 
 ---
 
-# &#9989; Variável independente
+# &#9989; Fator
 
 <div id="caixa2">
-   É uma das variáveis em estudo que está sendo controlada.
+   É a variável independente em estudo que está sendo controlada.
 </div>
     	
 ---
@@ -116,7 +137,7 @@ class: center, middle
 # &#9989; Níveis
 
 <div id="caixa2">
-   São as categorias (divisões) do fator.
+   São as divisões do fator definidas pelo pesquisador a fim de determinar o efeito que tem sobre a variável de saída.
 </div>
 
 <!--
@@ -125,32 +146,69 @@ O nível está sendo alterado de forma sistemática de execução para execuçã
 
 ---
 
-# &#9989; Variável dependente
+# &#9989; Variável resposta
 
 <div id="caixa2">
-   É a característica da unidade experimental que é medida após cada experimento.
+   É a característica da unidade experimental que é medida após cada execução (<i>run</i>).
 </div>
-
----
-
-# &#9989; Unidade observacional
-
-<div id="caixa2">
-   Quando a unidade experimental é dividida, cada divisão é chamada de unidade observacional.
-</div>
-    	
 
 ---
 
 # &#9989; Erro experimental 
 
 <div id="caixa2">
-   É uma das variáveis em estudo que está sendo controlada.
+   É a diferença entre a variável resposta para um experimento particular e a média de longo prazo de
+todos os experimentos conduzidos nas mesmas configurações das variáveis independentes.
 </div>
 
 ---
 
-# Exercício 1
+# &#9989; Fatores de incômodo
+
+<div id="caixa2">
+   É qualquer variável que não é de interesse primário para o estudo, mas ainda pode afetar o resultado do experimento.
+</div>
+
+<!--
+Esses fatores podem criar variabilidade nos resultados e interferir na capacidade de detectar o efeito dos principais fatores de interesse.
+-->
+
+---
+
+
+class: center, middle
+
+# Extras
+
+---
+
+# &#9989; Confundimento
+
+<div id="caixa2">
+  É uma estratégia para reduzir o número de execuções (<i>run</i>) do experimento e consiste em <b>misturar</b> os efeitos de menor contribuição com outros fatores, por exemplo, os fatores de incômodo.
+</div>
+
+---
+
+# &#9989; Variáveis de confusão
+
+<div id="caixa2">
+   É uma variável que o pesquisador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. 
+</div>
+
+<!--
+Em um projeto experimental bem planejado, o efeito dessas variáveis ocultas deve se equilibrar para não alterar a conclusão de um estudo.
+-->
+
+---
+
+class: center, middle
+
+# Exercícios
+
+---
+
+# Exercício 1 &#9997;
 
 De acordo com o enunciado identifique:
 
@@ -162,7 +220,7 @@ De acordo com o enunciado identifique:
 
 ---
 
-# Exercício 2
+# Exercício 2 &#9997;
 
 De acordo com o enunciado, classifique o fator em:
 
@@ -172,26 +230,9 @@ De acordo com o enunciado, classifique o fator em:
 
 ---
 
-# Exercício 3
+# Exercício 3 &#9997;
 
 De acordo com o enunciado, identifique a unidade experimental e caso haja, a unidade observacional.
-
-
----
-
-# Fatores de confundimento
-
-<div id="caixa2">
-   Surgem quando cada alteração que um experimentador faz em um fator, entre as execuções, é acoplada a uma alteração idêntica em outro fator. Nesta situação, é impossível determinar qual fator causa quaisquer mudanças observadas na resposta ou na variável dependente.
-</div>
-
----
-
-# Variáveis de confusão
-
-<div id="caixa2">
-   É uma variável que o experimentador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. Em um projeto experimental bem planejado, o efeito dessas variáveis ocultas deve se equilibrar para não alterar a conclusão de um estudo.
-</div>
 
 ---
 
