@@ -79,7 +79,7 @@ class: center, middle
 # &#9989; Repetição
 
 <div id="caixa2">
-   É uma série de execuções (<i>run</i>) nas quais mudanças intencionais são feitas nas variáveis que estão sendo estudadas para que possamos observar as alterações sobre a variável de saída.
+   a experimentação deve ser repetida várias vezes para verificar se os resultados são consistentes e replicáveis. Isso ajuda a reduzir o impacto de fatores aleatórios e aumenta a confiabilidade dos resultados.
 </div>
 
 ---
@@ -103,7 +103,7 @@ knitr::include_graphics('figuras/ue.jpg')
 # &#9989; Aleatorização
 
 <div id="caixa2">
-   É a unidade onde observa-se ou mede-se os dados do experimento.
+   é um método para distribuir aleatoriamente as condições da experiência entre os participantes ou amostras, a fim de evitar o viés na seleção de grupos e para aumentar a validade da conclusão.
 </div>
 
 ---
@@ -119,7 +119,7 @@ knitr::include_graphics('figuras/ue.jpg')
 # &#9989; Controle local
 
 <div id="caixa2">
-   São as divisões do fator definidas pelo pesquisador a fim de determinar o efeito que tem sobre a variável de saída.
+   a experimentação envolve o controle de variáveis que possam afetar os resultados. Isso significa que todas as condições devem ser mantidas constantes, exceto para a variável que está sendo testada.
 </div>
 
 ---
@@ -139,7 +139,7 @@ class: center, middle
 
 ---
 
-# &#9989; Delineamento completamente aleatorizado
+# &#128214; Delineamento completamente aleatorizado
 
 <div id="caixa2">
   É uma estratégia para reduzir o número de execuções (<i>run</i>) do experimento e consiste em <b>misturar</b> os efeitos de menor contribuição com outros fatores, por exemplo, os fatores de incômodo.
@@ -147,7 +147,7 @@ class: center, middle
 
 ---
 
-# &#9989; Delineamento em blocos aleatorizados
+# &#128214; Delineamento em blocos aleatorizados
 
 <div id="caixa2">
    É uma variável que o pesquisador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. 
@@ -155,7 +155,7 @@ class: center, middle
 
 ---
 
-# &#9989; Delineamento em quadrado latino
+# &#128214; Delineamento em quadrado latino
 
 <div id="caixa2">
    É uma variável que o pesquisador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. 
@@ -245,7 +245,7 @@ knitr::include_graphics('figuras/fig7.jpg')
 
 
 <div id="caixa1">
- <div>Princípios básicos da experimentação
+ <div>Experimentos fatoriais e análise de variância
  </div>
 </div>
 
