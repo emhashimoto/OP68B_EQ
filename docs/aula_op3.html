@@ -46,6 +46,19 @@ div {
   text-align: justify;
   text-justify: inter-word;
 }
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 &lt;/style&gt;
 
 # Aula Passada
@@ -69,12 +82,6 @@ div {
 
 ---
 
-# Importância da Experimentação;
-
-
-
----
-
 class: center, middle
 
 # Princípios básicos da experimentação
@@ -84,37 +91,167 @@ class: center, middle
 # &amp;#9989; Repetição
 
 &lt;div id="caixa2"&gt;
-   a experimentação deve ser repetida várias vezes para verificar se os resultados são consistentes e replicáveis. Isso ajuda a reduzir o impacto de fatores aleatórios e aumenta a confiabilidade dos resultados.
+   Consiste em ter várias unidades experimentais com o mesmo nível de um fator ou mesma combinação de níveis (quando houver dois ou mais fatores).
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div class="row"&gt;
+  &lt;div class="column"&gt;
+&lt;img src="https://media.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" width="80%" style="display: block; margin: auto 0 auto auto;" /&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    
+&lt;img src="https://media.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" width="80%" style="display: block; margin: auto 0 auto auto;" /&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    
+&lt;img src="https://media.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" width="80%" style="display: block; margin: auto 0 auto auto;" /&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 ---
 
 # &amp;#128680; Importância 
 
-&lt;div id="caixa2"&gt;
-   É o item do estudo sobre o qual algo é alterado.
+A repetição tem duas propriedades importantes:
+
+- Permite obter uma estimativa do erro experimental.
+
+- Permite obter estimativas mais precisas dos parâmetros de interesse.
+
+---
+
+# &amp;#9989; Repetição
+
+&lt;div id="caixa1"&gt;
+   Estudo em casa de vegetação para avaliar o efeito três tipos de solo (&lt;i&gt;S1, S2&lt;/i&gt; e &lt;i&gt;S3&lt;/i&gt;) no crescimento de soja.
 &lt;/div&gt;
 
---
+---
 
+# Número de repetições
+
+- Capítulo 3 - 3.5.2 - Determining the Number of Replicates (página 70)
+
+&lt;img src="figuras/fig8.jpg" width="35%" style="display: block; margin: auto;" /&gt;
+
+---
+
+- **Método 1**
+
+
+```r
+# pacote
+library(daewr)
+# menor número de repetições
+rmin &lt;- 
+# maior número de repetições
+rmax &lt;- 
+# repetições
+nreps &lt;- c(rmin:rmax)
+# nível de significância
+alpha &lt;-
+# total de combinações
+nlev &lt;-
+# estimativa do erro experimental
+s &lt;- 
+# tamanho da diferença prática entre médias
+Delta &lt;- 
+# poder do teste
+poder &lt;- Fpower1(alpha, nlev, nreps, Delta, s)
+round(poder,5)
+```
+
+---
+
+- **Método 1**: Exemplo de aplicação
+
+&lt;div id="caixa1"&gt;
+   Um experimento de helicóptero de papel está planejado para investigar os efeitos de:
+   &lt;br&gt;
+   - quatro níveis do fator &lt;i&gt;A&lt;/i&gt; = comprimento da asa e 
+   &lt;br&gt;
+   - quatro níveis do fator &lt;i&gt;B&lt;/i&gt; = largura do corpo, 
+&lt;br&gt;   
+  ao longo do tempo de voo. Se experimentos-piloto
+com nove repetições de um projeto resultou em tempos de voo de:
 &lt;br&gt;
+&lt;center&gt;2.8, 2.6, 3.5, 3.0, 3.1, 3.5, 3.2, 3.4 e 3.4&lt;/center&gt; 
+&lt;br&gt;
+segundos. Quantas repetições seriam necessárias para
+detectar uma diferença nos tempos de voo de 1 segundo com um poder de 0,90?
+&lt;/div&gt;
 
-&lt;img src="figuras/ue.jpg" width="120%" style="display: block; margin: auto;" /&gt;
+---
+
+- **Método 1**: Exemplo de aplicação
+
+
+```r
+# pacote
+library(daewr)
+# menor número de repetições
+rmin &lt;- 2
+# maior número de repetições
+rmax &lt;- 8
+# repetições
+nreps &lt;- c(rmin:rmax)
+# nível de significância
+alpha &lt;- 0.05
+# total de combinações: 4x4
+nlev &lt;- 16
+# estimativa do erro experimental (teste piloto)
+s &lt;- 0.32
+# tamanho da diferença prática entre médias
+Delta &lt;- 1
+# poder do teste
+poder &lt;- Fpower1(alpha, nlev, nreps, Delta, s)
+round(poder,5)
+```
+
+---
+
+- **Método 1**: Exemplo de aplicação
+
+
+```
+     alpha nlev nreps Delta sigma   power
+[1,]  0.05   16     2     1  0.32 0.24173
+[2,]  0.05   16     3     1  0.32 0.48174
+[3,]  0.05   16     4     1  0.32 0.69246
+[4,]  0.05   16     5     1  0.32 0.83829
+[5,]  0.05   16     6     1  0.32 0.92326
+[6,]  0.05   16     7     1  0.32 0.96664
+[7,]  0.05   16     8     1  0.32 0.98655
+```
 
 ---
 
 # &amp;#9989; Aleatorização
 
 &lt;div id="caixa2"&gt;
-   é um método para distribuir aleatoriamente as condições da experiência entre os participantes ou amostras, a fim de evitar o viés na seleção de grupos e para aumentar a validade da conclusão.
+   É a atribuição dos níveis do fator as unidades experimentais de modo que cada unidade tenha a mesma probabilidade de receber cada nível
 &lt;/div&gt;
+
+&lt;img src="https://media.giphy.com/media/UQIlrgnV4ZOf3S0J81/giphy.gif" width="30%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # &amp;#128680; Importância
 
-&lt;div id="caixa2"&gt;
-   É a variável independente em estudo que está sendo controlada.
+A aleatorização é utilizada para:
+
+- evitar o viés na seleção de grupos.
+
+- evitar a correlação entre unidades experimentais adjacentes.
+
+---
+
+# &amp;#9989; Aleatorização
+
+&lt;div id="caixa1"&gt;
+   Estudo em casa de vegetação para avaliar o efeito três tipos de solo (&lt;i&gt;S1, S2&lt;/i&gt; e &lt;i&gt;S3&lt;/i&gt;) no crescimento de soja.
 &lt;/div&gt;
     	
 ---
@@ -122,15 +259,54 @@ class: center, middle
 # &amp;#9989; Controle local
 
 &lt;div id="caixa2"&gt;
-   a experimentação envolve o controle de variáveis que possam afetar os resultados. Isso significa que todas as condições devem ser mantidas constantes, exceto para a variável que está sendo testada.
+   Consiste no agrupamento de unidades experimentais em grupos denominados blocos, sendo as unidades dentro de um grupo tão semelhantes quanto possível.
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;img src="https://media.giphy.com/media/G2qi0ogzHYMVDfQoVb/giphy.gif" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# &amp;#9989; Controle local
+
+&lt;div id="caixa2"&gt;
+   Consiste no agrupamento de unidades experimentais em grupos denominados blocos, sendo as unidades dentro de um grupo tão semelhantes quanto possível.
+&lt;/div&gt;
+
+&lt;br&gt;
+
+&lt;div class="row"&gt;
+  &lt;div class="column"&gt;
+  &lt;b&gt;Fogo&lt;/b&gt;
+&lt;img src="https://media.giphy.com/media/bkQAAeOePeK3e/giphy.gif" width="90%" style="display: block; margin: auto;" /&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;b&gt;Água&lt;/b&gt;
+&lt;img src="https://media.giphy.com/media/Wklt2njWsEQzS/giphy.gif" width="90%" style="display: block; margin: auto;" /&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;b&gt;Elétrico&lt;/b&gt;
+&lt;img src="https://media.giphy.com/media/xx0JzzsBXzcMK542tx/giphy.gif" width="90%" style="display: block; margin: auto;" /&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
 ---
 
 # &amp;#128680; Importância
 
-&lt;div id="caixa2"&gt;
-   É a característica da unidade experimental que é medida após cada execução (&lt;i&gt;run&lt;/i&gt;).
+O controle local é utilizado para:
+
+- reduzir ou eliminar a variabilidade transmitida por fatores de incômodos.
+
+- reduzir o erro experimental.
+
+---
+
+# &amp;#9989; Controle local
+
+&lt;div id="caixa1"&gt;
+   Estudo em casa de vegetação para avaliar o efeito três tipos de solo (&lt;i&gt;S1, S2&lt;/i&gt; e &lt;i&gt;S3&lt;/i&gt;) no crescimento de soja. Na casa de vegetação há um umidificador de ambiente de frente para mesas.
 &lt;/div&gt;
 
 ---
@@ -138,14 +314,14 @@ class: center, middle
 
 class: center, middle
 
-# Delineamentos experimentais
+# Delineamentos experimentais simples
 
 ---
 
 # &amp;#128214; Delineamento completamente aleatorizado
 
 &lt;div id="caixa2"&gt;
-  É uma estratégia para reduzir o número de execuções (&lt;i&gt;run&lt;/i&gt;) do experimento e consiste em &lt;b&gt;misturar&lt;/b&gt; os efeitos de menor contribuição com outros fatores, por exemplo, os fatores de incômodo.
+  É aquele em que cada nível ocorre um número especificado, possivelmente desigual, de vezes.
 &lt;/div&gt;
 
 ---
@@ -153,7 +329,7 @@ class: center, middle
 # &amp;#128214; Delineamento em blocos aleatorizados
 
 &lt;div id="caixa2"&gt;
-   É uma variável que o pesquisador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. 
+   É aquele em que o número de unidades experimentais por bloco é igual ao número de níveis. Cada nível ocorre uma vez e apenas uma vez em cada bloco, sendo a ordem dos níveis dentro de um bloco ao acaso. 
 &lt;/div&gt;
 
 ---
@@ -161,7 +337,7 @@ class: center, middle
 # &amp;#128214; Delineamento em quadrado latino
 
 &lt;div id="caixa2"&gt;
-   É uma variável que o pesquisador desconhece ou não pode controlar, e que pode ter um efeito sobre o resultado do experimento. 
+   É aquele em que cada nível ocorre uma vez e apenas uma vez em cada linha e cada coluna, de modo que os números de linhas, colunas e níveis sejam todos iguais.
 &lt;/div&gt;
 
 ---
@@ -174,57 +350,43 @@ class: center, middle
 
 # Exercício 1 &amp;#9997;
 
-De acordo com o enunciado identifique:
-
-- a unidade experimental;
-
-- o fator e seus níveis;
-
-- o fator de incômodo, se houver;
-
-- a variável resposta.
+Considere um experimento para avaliar três variedades de batatas quanto a sua produção em uma área experimental que possui um gradiente de fertilidade. Em cada croqui do experimento, verifique se os princípios básicos da experimentação foram aplicados corretamente.
 
 ---
 
-# Exercício 1 &amp;#9997;
+- **Croqui 1**
 
-Um experimento foi feito para determinar o efeito de quatro produtos  químicos diferentes sobre a resistência de um tecido. Esses produtos químicos são usados como parte do processo de acabamento, sob prensagem permanente. Além disso, cinco amostra de tecidos foram selecionadas e testando cada tipo de produto químico uma vez, em uma ordem aleatória, em cada amostra de tecido.
-
----
-
-# Exercício 2 &amp;#9997;
-
-De acordo com o enunciado, identifique e classifique o fator em:
-
-- efeito aleatório ou 
-
-- efeito fixo,
-
-justifique a classificação.
-
----
-
-# Exercício 2 &amp;#9997;
-
-a) Um experimento foi realizado para avaliar a resistência do concreto à compressão em função de quatro técnicas diferentes de misturas.
+&lt;img src="figuras/croqui1.jpg" width="60%" style="display: block; margin: auto;" /&gt;
 
 &lt;br&gt;
 
-b) Um artigo na revista *Journal of Quality Technology* descreve um experimento que investiga os efeitos, no brilho da polpa, de quatro produtos químicos de branqueamento. Esses quatro produtos químicos foram selecionados ao acaso, a partir de uma população de agentes potenciais para o branqueamento.
+- **Croqui 2**
+
+&lt;img src="figuras/croqui2.jpg" width="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Exercício 3 &amp;#9997;
+# Exercício 2 &amp;#9997;
 
-De acordo com o enunciado, identifique a unidade experimental e caso haja, a unidade observacional.
+De acordo com o enunciado, identifique qual delineamento foi utilizado:
+
+- completamente aleatorizado
+
+- em blocos
+
+- quadrado latino
+
+justifique a escolha
 
 ---
 
-# Exercício 3 &amp;#9997;
+# Exercício 2 &amp;#9997;
 
-a) Um experimento foi conduzido para determinar se quatro temperaturas específicas de queima afetam a densidade de um certo tipo de tijolo. 
+a) Considere um experimento para estudar o efeitos de seis drogas `\((A,B,C,D,E,F)\)` sobre o tempo de reação de indivíduos às drogas. Sabendo que as reações individuais podem ser diferentes e a ordem de administração das drogas afeta a resposta, temos então, dois fatores de incômodo (indivíduo e ordem) e um fator de interesse (droga).
 
-b) Um experimento foi conduzido para avaliar o efeito de três tipos de adubação sobre a quantidade de massa seca de raiz de uma determinada hortaliça. Nestas condições, uma horta foi divida em nove quadrados de igual tamanho e em cada quadrado, de forma aleatória, foi aplicado a abubação. Ao final do estudo, dez hortalicas foram retiradas de cada quadrado para avaliar a quantidade de massa seca.
+---
+
+b) Um artigo no periódico *Lubrification Engineering* descreveu os resultados de  um experimento planejado para investigar os efeitos das propriedades de materiais à base de carbono sobre a evolução de defeitos na superfície de lacres desses materiais. Esses lacres são usados extensivamente em equipamentos como aqueles usados na partida de turbina de ar. Quatro materiais diferentes de carbono `\((EC10, EC10A, EC4, EC1)\)` foram testados e a rugosidade da superfície do lacre foi medida.
 
 ---
 
