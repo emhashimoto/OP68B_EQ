@@ -73,7 +73,30 @@ knitr::include_graphics('https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.
 
 --
 
-&#128309; Aplicar os princípios básicos da experimentação em exemplos práticos.
+&#128309; Identificar os princípios básicos da experimentação em exemplos práticos.
+
+---
+
+# Plano de Condução de um Experimento
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics('figuras/passos.jpg')
+```
+
+---
+
+# Plano de Condução de um Experimento
+
+<div id="caixa1">
+   <b>Objetivo</b>: avaliar o efeito de três variedades de soja (<i>V1, V2</i> e <i>v3</i>) em relação ao seu cresimento.
+   <br>
+   <br>
+   <b>Local</b>: casa de vegetação com ambiente interno controlado, porém há um gradiente de luminosidade da direita para esquerda.
+</div>
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('https://media.giphy.com/media/yv1ggi3Cbase05a8iS/giphy.gif')
+```
 
 ---
 
@@ -123,13 +146,13 @@ A repetição tem duas propriedades importantes:
 
 ---
 
+<!--
 # &#9989; Repetição
 
 <div id="caixa1">
    Estudo em casa de vegetação para avaliar o efeito três tipos de solo (<i>S1, S2</i> e <i>S3</i>) no crescimento de soja.
 </div>
-
----
+-->
 
 # Número de repetições
 
@@ -261,13 +284,13 @@ A aleatorização é utilizada para:
 
 ---
 
+<!--
 # &#9989; Aleatorização
 
 <div id="caixa1">
    Estudo em casa de vegetação para avaliar o efeito três tipos de solo (<i>S1, S2</i> e <i>S3</i>) no crescimento de soja.
 </div>
-    	
----
+-->
 
 # &#9989; Controle local
 
@@ -322,16 +345,15 @@ O controle local é utilizado para:
 
 - reduzir o erro experimental.
 
----
-
+<!--
 # &#9989; Controle local
 
 <div id="caixa1">
    Estudo em casa de vegetação para avaliar o efeito três tipos de solo (<i>S1, S2</i> e <i>S3</i>) no crescimento de soja. Na casa de vegetação há um umidificador de ambiente de frente para mesas.
 </div>
+-->
 
 ---
-
 
 class: center, middle
 
@@ -342,7 +364,7 @@ class: center, middle
 # &#128214; Delineamento completamente aleatorizado
 
 <div id="caixa2">
-  É aquele em que cada nível ocorre um número especificado, possivelmente desigual, de vezes.
+  É aquele em que cada nível ocorre um número especificado.
 </div>
 
 ---
@@ -427,6 +449,14 @@ knitr::include_graphics('figuras/fig8.jpg')
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics('figuras/fig7.jpg')
+```
+
+---
+
+# Referências &#128218;
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('figuras/fig6.jpg')
 ```
 
 ---
