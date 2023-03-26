@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>OP68B - Planejamento e análise de experimentos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Profa. Patricia e Profa. Elizabeth" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="meu-tema-op2.css" type="text/css" />
+    <link rel="stylesheet" href="box2.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# OP68B - Planejamento e análise de experimentos
+]
+.subtitle[
+## Experimentos em esquema fatorial e <br> análise de variância
+]
+.author[
+### Profa. Patricia e Profa. Elizabeth
+]
+
+---
+
+
+
+
+&lt;style&gt; 
+#caixa1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px blue;
+  font-size: 20pt;
+}
+#caixa2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px green;
+  font-size: 20pt;
+}
+div {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+&lt;/style&gt;
+
+# Aula Passada
+
+---
+
+# Objetivo da Aula &amp;#127919;
+
+.pull-left[
+&lt;img src="https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.gif" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+.pull-right[
+
+&amp;#128309; Definir experimentos em esquema &lt;b&gt;fatorial&lt;/b&gt;.
+{{content}}
+]
+
+--
+
+&amp;#128309; Análise de variância (ANOVA)
+
+---
+
+# Importância
+
+---
+
+class: center, middle
+
+# Experimentos em Esquema Fatorial
+
+---
+
+# &amp;#9989; Definição
+
+&lt;div id="caixa2"&gt;
+   Consiste em ter várias unidades experimentais com o mesmo nível de um fator ou mesma combinação de níveis (quando houver dois ou mais fatores).
+&lt;/div&gt;
+
+---
+
+# &amp;#9989; ANOVA
+
+&lt;div id="caixa2"&gt;
+   É a atribuição dos níveis do fator as unidades experimentais de modo que cada unidade tenha a mesma probabilidade de receber cada nível
+&lt;/div&gt;
+
+---
+
+class: center, middle
+
+# Exercícios
+
+---
+
+# Exercício 1 &amp;#9997;
+
+Faça uma ANOVA
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig8.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig7.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig6.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Próxima aula
+
+
+&lt;div id="caixa1"&gt;
+ &lt;div&gt;Teste de Tukey e análise de resíduos
+ &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2RkMjg1YTgwMjNhNjg5YTVjNTRlOTc0ZDc5ZmVhNGQ3NDEyMTBkYyZjdD1n/lD76yTC5zxZPG/giphy.gif" width="70%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": false,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
