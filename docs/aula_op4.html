@@ -48,7 +48,7 @@ div {
 }
 /* Create three equal columns that floats next to each other */
 .column {
-  float: left;
+  float: center;
   width: 30%;
   padding: 10px;
 }
@@ -58,6 +58,9 @@ div {
   content: "";
   display: table;
   clear: both;
+}
+p.big {
+  line-height: 0.75;
 }
 &lt;/style&gt;
 
@@ -78,11 +81,27 @@ div {
 
 --
 
-&amp;#128309; Análise de variância (ANOVA)
+&amp;#128309; Aprender a fazer uma &lt;b&gt;análise de variância&lt;/b&gt; (ANOVA).
+{{content}}
+
+--
+
+&amp;#128309; &lt;b&gt;Interpretar&lt;/b&gt; os resultados.
 
 ---
 
-# Importância
+# Motivação &amp;#128161;
+
+&lt;div class="row"&gt;
+  &lt;div class="column"&gt;
+  &lt;b&gt;Tipo de fertilizante&lt;/b&gt;
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDI0MTAxZTdlNGMzNzhhNTFhM2YxNThjMzgzMTFjOWU4OTM2MTgzZSZjdD1n/De6pVg0gDX82safJ0w/giphy.gif" width="80%" style="display: block; margin: auto;" /&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;b&gt;Variedade&lt;/b&gt;
+&lt;img src="https://media.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" width="90%" style="display: block; margin: auto;" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
 ---
 
@@ -92,19 +111,195 @@ class: center, middle
 
 ---
 
-# &amp;#9989; Definição
+# &amp;#9989; Experimento em esquema fatorial
 
 &lt;div id="caixa2"&gt;
-   Consiste em ter várias unidades experimentais com o mesmo nível de um fator ou mesma combinação de níveis (quando houver dois ou mais fatores).
+Experimento no qual &lt;b&gt;todas&lt;/b&gt; as combinações dos níveis de dois ou mais fatores são estudados simultaneamente.
 &lt;/div&gt;
+
+---
+
+# &amp;#128221; Croqui
+
+&lt;div id="caixa1"&gt;
+Experimento em esquema fatorial 2x3 com três repetições
+&lt;/div&gt;
+
+**Delineamento completamente aleatorizado**
+
+
+---
+
+# &amp;#128221; Croqui
+
+&lt;div id="caixa1"&gt;
+Experimento em esquema fatorial 2x3 com três repetições
+&lt;/div&gt;
+
+**Delineamento em blocos aleatorizados**
+
+---
+
+.pull-left[
+&amp;#128077; **Vantagens**
+]
+
+.pull-right[
+&amp;#128078; **Desvantagens**
+]
+
+
+---
+
+# &amp;#9989; Experimento em esquema de parcela subdividida
+
+&lt;div id="caixa2"&gt;
+Experimento no qual um dos fatores, digamos &lt;i&gt;A&lt;/i&gt;, é aleatorizado na parcela principal. Cada parcela principal é dividida em subparcelas de modo que os níves do fator &lt;i&gt;B&lt;/i&gt; possam ser aleatorizados.
+&lt;/div&gt;
+
+---
+
+# &amp;#128221; Croqui
+
+&lt;div id="caixa1"&gt;
+Experimento em esquema fatorial 2x3 com três repetições
+&lt;/div&gt;
+
+**Delineamento completamente aleatorizado**
+
+
+---
+
+# &amp;#128221; Croqui
+
+&lt;div id="caixa1"&gt;
+Experimento em esquema fatorial 2x3 com três repetições
+&lt;/div&gt;
+
+**Delineamento em blocos aleatorizados**
+
+
+---
+
+# &amp;#9989; Modelo linear
+
+A forma geral de um modelo que descreve as observações proveniente de um experimento é dada por
+
+`$$Y=f(\cdot)+\varepsilon$$`
+
+---
+
+# &amp;#9989; Delineamento completamente aleatorizado
+
+O modelo linear que descreve as observações proveniente de um experimento em esquema fatorial `\(a\times b\)` é dado por
+
+`$$Y_{ijk}=\mu+\tau_{i}+\gamma_{j}+(\tau\gamma)_{ij}+\varepsilon_{ijk},$$`
+em que `\(i=1,\ldots,a\)`, `\(j=1,\ldots,b\)` e `\(k=1,\ldots,r\)`.
+
+---
+
+# &amp;#9989; Delineamento em blocos aleatorizados
+
+O modelo linear que descreve as observações proveniente de um experimento em esquema fatorial `\(a\times b\)` é dado por
+
+--
+
+`$$Y_{ijk}=\mu+\beta_{k}+\tau_{i}+\gamma_{j}+(\tau\gamma)_{ij}+\varepsilon_{ijk}$$`
+em que `\(i=1,\ldots,a\)`, `\(j=1,\ldots,b\)` e `\(k=1,\ldots,r\)`.
 
 ---
 
 # &amp;#9989; ANOVA
 
 &lt;div id="caixa2"&gt;
-   É a atribuição dos níveis do fator as unidades experimentais de modo que cada unidade tenha a mesma probabilidade de receber cada nível
+   É uma análise estatística que consiste na &lt;b&gt;decomposição&lt;/b&gt; da variância total da variável resposta em componentes associados as fontes de variação.
 &lt;/div&gt;
+
+---
+
+# &amp;#128196; Teste de hipótese
+
+- Definir as hipóteses
+
+&lt;br&gt;
+
+--
+
+- Fixar o nível de significância
+
+&lt;br&gt;
+
+--
+
+- Definir o critério de rejeição
+
+&lt;br&gt;
+
+--
+
+- Determinar a estatística do teste
+
+---
+
+# &amp;#128196; Tabela da ANOVA
+
+- A estatística do teste é dada pela seguinte tabela
+
+&lt;table style='font-size:130%'&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
+    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
+    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
+    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
+    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fator &lt;i&gt;A&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;a-1&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;SQ&lt;sub&gt;A&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;A&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;A&lt;/sub&gt;&lt;/i&gt;/QM&lt;sub&gt;R&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Fator &lt;i&gt;B&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;b-1&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;SQ&lt;sub&gt;B&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;B&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;B&lt;/sub&gt;&lt;/i&gt;/QM&lt;sub&gt;R&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interação&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;(a-1)(b-1)&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;SQ&lt;sub&gt;I&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;I&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;I&lt;/sub&gt;&lt;/i&gt;/QM&lt;sub&gt;R&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Resíduo&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;ab(r-1)&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;SQ&lt;sub&gt;R&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;QM&lt;sub&gt;R&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;abr-1&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;i&gt;SQ&lt;sub&gt;T&lt;/sub&gt;&lt;/i&gt;&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# &amp;#128211; Interpretação dos resultados
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+**Teste de hipótese**
 
 ---
 
@@ -116,7 +311,88 @@ class: center, middle
 
 # Exercício 1 &amp;#9997;
 
-Faça uma ANOVA
+&lt;div id="caixa2"&gt;
+   Um experimento no esquema fatorial 2x3 foi realizado para investigar o efeito do tipo de zarcão e do método de aplicação na adesão da tinta. Três espécimes foram pintados com cada um dos zarcões, usando cada um dos métodos de aplicação. Uma camada de tinta foi aplicada e a força de adesão foi medida. Os dados do experimento são apresentados na seguinte tabela.
+&lt;/div&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+&lt;table style="width:110%; font-size:140%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th colspan="2" align='center'&gt;Método de aplicação&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Tipo de zarcão&lt;/th&gt;
+    &lt;th&gt;Imersão&lt;/th&gt;
+    &lt;th&gt;Aspersão&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;1&lt;/td&gt;
+    &lt;td&gt;4.0, 4.5, 4.3&lt;/td&gt;
+    &lt;td&gt;5.4, 4.9, 5.6&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;2&lt;/td&gt;
+    &lt;td&gt;5.6, 4.9, 5.4&lt;/td&gt;
+    &lt;td&gt;5.8, 6.1, 6.3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;3&lt;/td&gt;
+    &lt;td&gt;3.8, 3.7, 4.0&lt;/td&gt;
+    &lt;td&gt;5.5, 5.0, 5.0&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+&lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
+
+&lt;table style='width:105%; font-size:130%'&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
+    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
+    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
+    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
+    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Método de &lt;br&gt;aplicação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Tipo de &lt;br&gt;zarcão&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Resíduo&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
 ---
 
