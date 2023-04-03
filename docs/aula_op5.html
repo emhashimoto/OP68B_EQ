@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>OP68B - Planejamento e análise de experimentos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Profa. Patricia e Profa. Elizabeth" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="meu-tema-op2.css" type="text/css" />
+    <link rel="stylesheet" href="box2.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# OP68B - Planejamento e análise de experimentos
+]
+.subtitle[
+## Teste de Tukey e análise de resíduos
+]
+.author[
+### Profa. Patricia e Profa. Elizabeth
+]
+
+---
+
+
+
+
+&lt;style&gt; 
+#caixa1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px blue;
+  font-size: 20pt;
+}
+#caixa2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px green;
+  font-size: 20pt;
+}
+div {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: center;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+p.big {
+  line-height: 0.75;
+}
+&lt;/style&gt;
+
+# Aula Passada
+
+---
+
+# Objetivo da Aula &amp;#127919;
+
+.pull-left[
+&lt;img src="https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.gif" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+.pull-right[
+
+&amp;#128309; &lt;b&gt;Terminar&lt;/b&gt; a ANOVA.
+{{content}}
+]
+
+--
+
+&amp;#128309; Teste de comparação múltipla: &lt;b&gt;teste de Tukey&lt;/b&gt;.
+{{content}}
+
+--
+
+&amp;#128309; &lt;b&gt;Interpretar&lt;/b&gt; os resultados.
+{{content}}
+
+--
+
+&amp;#128309; Análise de &lt;b&gt;resíduos&lt;/b&gt;.
+{{content}}
+
+--
+
+&amp;#128309; &lt;b&gt;Interpretar&lt;/b&gt; os resultados.
+
+---
+
+class: center, middle
+
+# Experimentos em Esquema Fatorial
+
+---
+
+# Exercício 1 &amp;#9997;
+
+&lt;div id="caixa2"&gt;
+   Um experimento no esquema fatorial 2x3 foi realizado para investigar o efeito do tipo de zarcão e do método de aplicação na adesão da tinta. Três espécimes foram pintados com cada um dos zarcões, usando cada um dos métodos de aplicação. Uma camada de tinta foi aplicada e a força de adesão foi medida. Os dados do experimento são apresentados na seguinte tabela.
+&lt;/div&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+&lt;table style="width:110%; font-size:140%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th colspan="2" align='center'&gt;Método de aplicação&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Tipo de zarcão&lt;/th&gt;
+    &lt;th&gt;Imersão&lt;/th&gt;
+    &lt;th&gt;Aspersão&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;1&lt;/td&gt;
+    &lt;td&gt;4.0, 4.5, 4.3&lt;/td&gt;
+    &lt;td&gt;5.4, 4.9, 5.6&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;2&lt;/td&gt;
+    &lt;td&gt;5.6, 4.9, 5.4&lt;/td&gt;
+    &lt;td&gt;5.8, 6.1, 6.3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;3&lt;/td&gt;
+    &lt;td&gt;3.8, 3.7, 4.0&lt;/td&gt;
+    &lt;td&gt;5.5, 5.0, 5.0&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+&lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
+
+&lt;table style='width:105%; font-size:130%'&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
+    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
+    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
+    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
+    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Método de &lt;br&gt;aplicação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Tipo de &lt;br&gt;zarcão&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Resíduo&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+class: center, middle
+
+# Verificação dos Pressupostos da ANOVA
+
+---
+
+class: center, middle
+
+# Teste de Comparação Múltipla
+
+---
+
+# &amp;#9989; Teste de Tukey
+
+&lt;div id="caixa2"&gt;
+   É uma análise estatística que consiste na &lt;b&gt;decomposição&lt;/b&gt; da variância total da variável resposta em componentes associados as fontes de variação.
+&lt;/div&gt;
+
+---
+
+# Exercício 2 - Teste de Tukey &amp;#9997;
+
+&lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
+
+&lt;table style='width:105%; font-size:130%'&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
+    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
+    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
+    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
+    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Método de &lt;br&gt;aplicação&lt;/td&gt;
+    &lt;td&gt; 1&lt;/td&gt;
+    &lt;td&gt; 4,91&lt;/td&gt;
+    &lt;td&gt; 4,91&lt;/td&gt;
+    &lt;td&gt; 61,38&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Tipo de &lt;br&gt;zarcão&lt;/td&gt;
+    &lt;td&gt; 2&lt;/td&gt;
+    &lt;td&gt; 4,58&lt;/td&gt;
+    &lt;td&gt; 2,29&lt;/td&gt;
+    &lt;td&gt; 28,63&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interação&lt;/td&gt;
+    &lt;td&gt; 2&lt;/td&gt;
+    &lt;td&gt; 0,24&lt;/td&gt;
+    &lt;td&gt; 0,12&lt;/td&gt;
+    &lt;td&gt; 1,5&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Resíduo&lt;/td&gt;
+    &lt;td&gt; 12&lt;/td&gt;
+    &lt;td&gt; 0,99&lt;/td&gt;
+    &lt;td&gt; 0,08&lt;/td&gt;
+    &lt;td&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt; 17&lt;/td&gt;
+    &lt;td&gt; 10,72&lt;/td&gt;
+    &lt;td&gt; --- &lt;/td&gt;
+    &lt;td&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+  
+---
+
+# Teste de Tukey: método de aplicação &amp;#9997;
+
+---
+
+# Teste de Tukey: tipo de zarcão &amp;#9997;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig9.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig7.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Próximas aulas
+
+
+&lt;div id="caixa1"&gt;
+ &lt;div&gt; Planejamento e condução de experimentos
+ &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmIyNjliMDQ5NjJjNmEzOWExYzNmMThmMDIyNjExOGVmYzMzN2UwYyZjdD1n/9uIjwFgumdKSw8gzpV/giphy.gif" width="80%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": false,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

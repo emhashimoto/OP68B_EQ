@@ -1,0 +1,296 @@
+---
+title: "OP68B - Planejamento e análise de experimentos"
+subtitle: "Teste de Tukey e análise de resíduos" 
+author: "Profa. Patricia e Profa. Elizabeth"
+output:
+  xaringan::moon_reader:
+    css: [default, default-fonts, meu-tema-op2.css, box2.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: false
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = FALSE, 
+                      comment = '',
+                      message = FALSE,
+                      warning = FALSE,
+                      cache = TRUE)
+```
+
+<style> 
+#caixa1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px blue;
+  font-size: 20pt;
+}
+#caixa2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px green;
+  font-size: 20pt;
+}
+div {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: center;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+p.big {
+  line-height: 0.75;
+}
+</style>
+
+# Aula Passada
+
+---
+
+# Objetivo da Aula &#127919;
+
+.pull-left[
+```{r , echo=FALSE, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics('https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.gif')
+```
+]
+.pull-right[
+
+&#128309; <b>Terminar</b> a ANOVA.
+{{content}}
+]
+
+--
+
+&#128309; Teste de comparação múltipla: <b>teste de Tukey</b>.
+{{content}}
+
+--
+
+&#128309; <b>Interpretar</b> os resultados.
+{{content}}
+
+--
+
+&#128309; Análise de <b>resíduos</b>.
+{{content}}
+
+--
+
+&#128309; <b>Interpretar</b> os resultados.
+
+---
+
+class: center, middle
+
+# Experimentos em Esquema Fatorial
+
+---
+
+# Exercício 1 &#9997;
+
+<div id="caixa2">
+   Um experimento no esquema fatorial 2x3 foi realizado para investigar o efeito do tipo de zarcão e do método de aplicação na adesão da tinta. Três espécimes foram pintados com cada um dos zarcões, usando cada um dos métodos de aplicação. Uma camada de tinta foi aplicada e a força de adesão foi medida. Os dados do experimento são apresentados na seguinte tabela.
+</div>
+
+<p class="big">
+</p>
+
+<table style="width:110%; font-size:140%">
+  <tr>
+    <th></th>
+    <th colspan="2" align='center'>Método de aplicação</th>
+  </tr>
+  <tr>
+    <th align="center">Tipo de zarcão</th>
+    <th>Imersão</th>
+    <th>Aspersão</th>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td>4.0, 4.5, 4.3</td>
+    <td>5.4, 4.9, 5.6</td>
+  </tr>
+  <tr>
+    <td align="center">2</td>
+    <td>5.6, 4.9, 5.4</td>
+    <td>5.8, 6.1, 6.3</td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td>3.8, 3.7, 4.0</td>
+    <td>5.5, 5.0, 5.0</td>
+  </tr>
+</table>
+
+---
+
+<h2>ANOVA dos dados de zarcão de tinta</h2>
+
+<table style='width:105%; font-size:130%'>
+  <tr>
+    <th align="center">Fonte de <br>variação</th>
+    <th align="center">Grau de <br>liberdade</th>
+    <th align="center">Soma de <br>quadrados</th>
+    <th align="center">Quadrado <br>médio</th>
+    <th align="center">Estatística <br>do teste</th>
+  </tr>
+  <tr>
+    <td>Método de <br>aplicação</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Tipo de <br>zarcão</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Interação</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Resíduo</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+
+---
+
+class: center, middle
+
+# Verificação dos Pressupostos da ANOVA
+
+---
+
+class: center, middle
+
+# Teste de Comparação Múltipla
+
+---
+
+# &#9989; Teste de Tukey
+
+<div id="caixa2">
+   É uma análise estatística que consiste na <b>decomposição</b> da variância total da variável resposta em componentes associados as fontes de variação.
+</div>
+
+---
+
+# Exercício 2 - Teste de Tukey &#9997;
+
+<h2>ANOVA dos dados de zarcão de tinta</h2>
+
+<table style='width:105%; font-size:130%'>
+  <tr>
+    <th align="center">Fonte de <br>variação</th>
+    <th align="center">Grau de <br>liberdade</th>
+    <th align="center">Soma de <br>quadrados</th>
+    <th align="center">Quadrado <br>médio</th>
+    <th align="center">Estatística <br>do teste</th>
+  </tr>
+  <tr>
+    <td>Método de <br>aplicação</td>
+    <td> 1</td>
+    <td> 4,91</td>
+    <td> 4,91</td>
+    <td> 61,38</td>
+  </tr>
+  <tr>
+    <td>Tipo de <br>zarcão</td>
+    <td> 2</td>
+    <td> 4,58</td>
+    <td> 2,29</td>
+    <td> 28,63</td>
+  </tr>
+  <tr>
+    <td>Interação</td>
+    <td> 2</td>
+    <td> 0,24</td>
+    <td> 0,12</td>
+    <td> 1,5</td>
+  </tr>
+  <tr>
+    <td>Resíduo</td>
+    <td> 12</td>
+    <td> 0,99</td>
+    <td> 0,08</td>
+    <td> --- </td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td> 17</td>
+    <td> 10,72</td>
+    <td> --- </td>
+    <td> --- </td>
+  </tr>
+  
+---
+
+# Teste de Tukey: método de aplicação &#9997;
+
+---
+
+# Teste de Tukey: tipo de zarcão &#9997;
+
+---
+
+# Referências &#128218;
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics('figuras/fig9.jpg')
+```
+
+---
+
+# Referências &#128218;
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics('figuras/fig7.jpg')
+```
+
+---
+
+# Próximas aulas
+
+
+<div id="caixa1">
+ <div> Planejamento e condução de experimentos
+ </div>
+</div>
+
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmIyNjliMDQ5NjJjNmEzOWExYzNmMThmMDIyNjExOGVmYzMzN2UwYyZjdD1n/9uIjwFgumdKSw8gzpV/giphy.gif')
+```
