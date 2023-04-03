@@ -20,7 +20,7 @@ class: center, middle, inverse, title-slide
 # OP68B - Planejamento e análise de experimentos
 ]
 .subtitle[
-## Teste de Tukey e análise de resíduos
+## Pressupostos da ANOVA e teste de Tukey
 ]
 .author[
 ### Profa. Patricia e Profa. Elizabeth
@@ -195,6 +195,128 @@ class: center, middle
 
 ---
 
+# &amp;#128187; Saída do *software*  R 
+
+
+
+
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+--
+
+* &lt;p style="font-size:130%"&gt;&lt;i&gt;p&lt;/i&gt;-valor&lt;/p&gt;
+
+
+
+---
+
+# &amp;#128187; Saída do *software*  R 
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Critério de rejeição&lt;/b&gt;&lt;/p&gt;
+
+
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(p\)`-valor for menor do que o nível de significância `\(\alpha\)`.
+
 
 ---
 
@@ -249,13 +371,112 @@ Sejam `\(y_1, y_2, \ldots, y_n\)` os valores observados no experimento e `\(\hat
 &lt;p class="big"&gt;
 &lt;/p&gt;
 
-- **Resíduos**
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Resíduo padronizado&lt;/b&gt;&lt;/p&gt;
+
+&lt;table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption style="font-size: initial !important;"&gt;As seis primeiras linhas&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Resposta &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preditos &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Residuo &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -1.1390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9966 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1424 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.4271 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -1.7085 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 5.6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.2814 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Teste de homogeneidade de variâncias&lt;/b&gt;: teste de Levene&lt;/p&gt;
+
+As hipóteses do teste são:
+
+`\(H_0:\)` a variância é constante `\(vs\)`
+
+`\(H_1:\)` a variância não é constante 
+
+--
 
 
 
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Levene &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9688 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
-- **Teste de Shapiro-Wilks**
+---
 
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Teste de normalidade&lt;/b&gt;: teste de Shapiro-Wilks&lt;/p&gt;
+
+As hipóteses do teste são
+
+`\(H_0:\)` os resíduos seguem distribuição normal `\(vs\)`
+
+`\(H_1:\)` os resíduos seguem outra distribuição
+
+--
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Shapiro-Wilk &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.937 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2575 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -277,55 +498,56 @@ class: center, middle
 
 &lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
 
-&lt;table style='width:105%; font-size:130%'&gt;
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
   &lt;tr&gt;
-    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
-    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
-    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
-    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
-    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Método de &lt;br&gt;aplicação&lt;/td&gt;
-    &lt;td&gt; 1&lt;/td&gt;
-    &lt;td&gt; 4,91&lt;/td&gt;
-    &lt;td&gt; 4,91&lt;/td&gt;
-    &lt;td&gt; 61,38&lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Tipo de &lt;br&gt;zarcão&lt;/td&gt;
-    &lt;td&gt; 2&lt;/td&gt;
-    &lt;td&gt; 4,58&lt;/td&gt;
-    &lt;td&gt; 2,29&lt;/td&gt;
-    &lt;td&gt; 28,63&lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Interação&lt;/td&gt;
-    &lt;td&gt; 2&lt;/td&gt;
-    &lt;td&gt; 0,24&lt;/td&gt;
-    &lt;td&gt; 0,12&lt;/td&gt;
-    &lt;td&gt; 1,5&lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
   &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Resíduo&lt;/td&gt;
-    &lt;td&gt; 12&lt;/td&gt;
-    &lt;td&gt; 0,99&lt;/td&gt;
-    &lt;td&gt; 0,08&lt;/td&gt;
-    &lt;td&gt; --- &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Total&lt;/td&gt;
-    &lt;td&gt; 17&lt;/td&gt;
-    &lt;td&gt; 10,72&lt;/td&gt;
-    &lt;td&gt; --- &lt;/td&gt;
-    &lt;td&gt; --- &lt;/td&gt;
-  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
   
 ---
 
 # Teste de Tukey: método de aplicação &amp;#9997;
-
-
 
 &lt;table class="table" style="font-size: 30px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -354,7 +576,27 @@ class: center, middle
 
 # Teste de Tukey: tipo de zarcão &amp;#9997;
 
-&lt;table class="table" style="font-size: 30px; margin-left: auto; margin-right: auto;"&gt;
+As hipóteses do teste são
+
+`\(H_0:\)` as médias não são diferentes `\(vs\)`
+
+`\(H_1:\)` as médias são diferentes
+
+
+&lt;br&gt;
+
+--
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Critério de rejeição&lt;/b&gt;&lt;/p&gt;
+
+
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(p\)`-valor for menor do que o nível de significância `\(\alpha\)`.
+
+---
+
+# Teste de Tukey: tipo de zarcão &amp;#9997;
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:center;"&gt; Tipo &lt;/th&gt;

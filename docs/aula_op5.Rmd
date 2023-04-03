@@ -1,6 +1,6 @@
 ---
 title: "OP68B - Planejamento e análise de experimentos"
-subtitle: "Teste de Tukey e análise de resíduos" 
+subtitle: "Pressupostos da ANOVA e teste de Tukey" 
 author: "Profa. Patricia e Profa. Elizabeth"
 output:
   xaringan::moon_reader:
@@ -188,6 +188,76 @@ class: center, middle
 
 ---
 
+# &#128187; Saída do *software*  R 
+
+```{r}
+library(readxl)
+library(tidyverse)
+dados <- read_xlsx("dados/dados_zarcao.xlsx")
+```
+
+```{r}
+# modelo
+ajuste <- lm(forca~metodo*tipo, data = dados)
+```
+
+```{r}
+library(knitr)
+library(kableExtra)
+options(knitr.kable.NA = '---')
+
+coluna1 <- c('Método', 'Tipo', 'Interação','Resíduo')
+anova_out <- anova(ajuste) |> 
+  as_tibble() |> 
+  add_column(coluna1, .before = 'Df')
+
+kable(anova_out, digits = 4,
+             col.names = c('Causa de variação',
+                           'Graus de liberdade',
+                           'Soma de quadrados',
+                           'Quadrado médio',
+                           'Estatística',
+                           'p-valor'),
+             align = c('c')) |> 
+  kable_styling(font_size = 25)
+```
+
+<p class="big">
+</p>
+
+--
+
+* <p style="font-size:130%"><i>p</i>-valor</p>
+
+
+
+---
+
+# &#128187; Saída do *software*  R 
+
+```{r}
+options(knitr.kable.NA = '---')
+
+kable(anova_out, digits = 4,
+             col.names = c('Causa de variação',
+                           'Graus de liberdade',
+                           'Soma de quadrados',
+                           'Quadrado médio',
+                           'Estatística',
+                           'p-valor'),
+             align = c('c')) |> 
+  kable_styling(font_size = 25)
+```
+
+<p class="big">
+</p>
+
+
+* <p style="font-size:130%"><b>Critério de rejeição</b></p>
+
+
+Teste $\Upsilon$: rejeitar $H_0$ se $p$-valor for menor do que o nível de significância $\alpha$.
+
 
 ---
 
@@ -242,15 +312,79 @@ $$d_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
 <p class="big">
 </p>
 
-- **Resíduos**
+* <p style="font-size:130%"><b>Resíduo padronizado</b></p>
 
 ```{r}
+# resíduo padronizado
+d <- rstandard(ajuste)
 
+yhat <- predict(ajuste)
+df <- data.frame(Resposta = dados$forca,
+                 Preditos = yhat,
+                 Residuo = d)
+df |> 
+  head() |> 
+  kable(digits = 4, align = c('c'),
+        caption = 'As seis primeiras linhas') |> 
+  kable_styling(font_size = 20)
 ```
 
+---
 
-- **Teste de Shapiro-Wilks**
+* <p style="font-size:130%"><b>Teste de homogeneidade de variâncias</b>: teste de Levene</p>
 
+As hipóteses do teste são:
+
+$H_0:$ a variância é constante $vs$
+
+$H_1:$ a variância não é constante 
+
+--
+
+```{r}
+library(car)
+# Teste de homogeneidade de variâncias
+lev <- leveneTest(forca~tipo*metodo, data = dados)
+```
+
+```{r}
+df_lev <- data.frame(teste=c('Levene'),
+                  estat=c(lev[[2]][[1]]),
+                  pvalor=c(lev[[3]][[1]]))
+
+knitr::kable(df_lev, col.names = c('Teste',
+                           'Estatística',
+                           'p-valor'),
+             align = c('c'), digits = 4)
+```
+
+---
+
+* <p style="font-size:130%"><b>Teste de normalidade</b>: teste de Shapiro-Wilks</p>
+
+As hipóteses do teste são
+
+$H_0:$ os resíduos seguem distribuição normal $vs$
+
+$H_1:$ os resíduos seguem outra distribuição
+
+--
+
+```{r}
+# Teste de normalidade
+sw <- shapiro.test(d)
+```
+
+```{r}
+df_sw <- data.frame(teste=c('Shapiro-Wilk'),
+                  estat=c(sw[[1]][[1]]),
+                  pvalor=c(sw[[2]][[1]]))
+
+kable(df_sw, col.names = c('Teste',
+                           'Estatística',
+                           'p-valor'),
+             align = c('c'), digits = 4)
+```
 
 ---
 
@@ -272,64 +406,26 @@ class: center, middle
 
 <h2>ANOVA dos dados de zarcão de tinta</h2>
 
-<table style='width:105%; font-size:130%'>
-  <tr>
-    <th align="center">Fonte de <br>variação</th>
-    <th align="center">Grau de <br>liberdade</th>
-    <th align="center">Soma de <br>quadrados</th>
-    <th align="center">Quadrado <br>médio</th>
-    <th align="center">Estatística <br>do teste</th>
-  </tr>
-  <tr>
-    <td>Método de <br>aplicação</td>
-    <td> 1</td>
-    <td> 4,91</td>
-    <td> 4,91</td>
-    <td> 61,38</td>
-  </tr>
-  <tr>
-    <td>Tipo de <br>zarcão</td>
-    <td> 2</td>
-    <td> 4,58</td>
-    <td> 2,29</td>
-    <td> 28,63</td>
-  </tr>
-  <tr>
-    <td>Interação</td>
-    <td> 2</td>
-    <td> 0,24</td>
-    <td> 0,12</td>
-    <td> 1,5</td>
-  </tr>
-  <tr>
-    <td>Resíduo</td>
-    <td> 12</td>
-    <td> 0,99</td>
-    <td> 0,08</td>
-    <td> --- </td>
-  </tr>
-  <tr>
-    <td>Total</td>
-    <td> 17</td>
-    <td> 10,72</td>
-    <td> --- </td>
-    <td> --- </td>
-  </tr>
+```{r}
+options(knitr.kable.NA = '---')
+
+kable(anova_out, digits = 4,
+             col.names = c('Causa de variação',
+                           'Graus de liberdade',
+                           'Soma de quadrados',
+                           'Quadrado médio',
+                           'Estatística',
+                           'p-valor'),
+             align = c('c')) |> 
+  kable_styling(font_size = 25)
+```
   
 ---
 
 # Teste de Tukey: método de aplicação &#9997;
 
 ```{r}
-library(readxl)
-library(tidyverse)
-dados <- read_xlsx("dados/dados_zarcao.xlsx")
-```
-
-```{r}
 library(Rmisc)
-library(knitr)
-library(kableExtra)
 
 df_metodo <- summarySE(dados, 
                      measurevar="forca", 
@@ -350,6 +446,26 @@ df_metodo |>
 
 # Teste de Tukey: tipo de zarcão &#9997;
 
+As hipóteses do teste são
+
+$H_0:$ as médias não são diferentes $vs$
+
+$H_1:$ as médias são diferentes
+
+
+<br>
+
+--
+
+* <p style="font-size:130%"><b>Critério de rejeição</b></p>
+
+
+Teste $\Upsilon$: rejeitar $H_0$ se $p$-valor for menor do que o nível de significância $\alpha$.
+
+---
+
+# Teste de Tukey: tipo de zarcão &#9997;
+
 ```{r}
 df_tipo <- summarySE(dados, measurevar="forca",
                    groupvars=c("tipo")) |> 
@@ -361,7 +477,7 @@ df_tipo |>
              col.names = c('Tipo','Força média',
                            'Erro padrão'),
              align = c('c')) |> 
-  kable_styling(font_size = 30)
+  kable_styling(font_size = 25)
 ```
 
 ---
