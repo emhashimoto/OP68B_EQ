@@ -398,7 +398,7 @@ class: center, middle
 # Referências &#128218;
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
-knitr::include_graphics('figuras/fig8.jpg')
+knitr::include_graphics('figuras/fig9.jpg')
 ```
 
 ---
@@ -407,14 +407,6 @@ knitr::include_graphics('figuras/fig8.jpg')
 
 ```{r , echo=FALSE, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics('figuras/fig7.jpg')
-```
-
----
-
-# Referências &#128218;
-
-```{r , echo=FALSE, fig.align = 'center', out.width = '40%'}
-knitr::include_graphics('figuras/fig6.jpg')
 ```
 
 ---
