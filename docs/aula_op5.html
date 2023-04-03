@@ -7,6 +7,8 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="meu-tema-op2.css" type="text/css" />
     <link rel="stylesheet" href="box2.css" type="text/css" />
   </head>
@@ -108,7 +110,7 @@ class: center, middle
 
 # Exercício 1 &amp;#9997;
 
-&lt;div id="caixa2"&gt;
+&lt;div id="caixa1"&gt;
    Um experimento no esquema fatorial 2x3 foi realizado para investigar o efeito do tipo de zarcão e do método de aplicação na adesão da tinta. Três espécimes foram pintados com cada um dos zarcões, usando cada um dos métodos de aplicação. Uma camada de tinta foi aplicada e a força de adesão foi medida. Os dados do experimento são apresentados na seguinte tabela.
 &lt;/div&gt;
 
@@ -193,9 +195,67 @@ class: center, middle
 
 ---
 
+
+---
+
 class: center, middle
 
 # Verificação dos Pressupostos da ANOVA
+
+---
+
+# &amp;#9989; Modelo linear
+
+Seja `\(Y_1, Y_2, \ldots, Y_n\)` uma amostra aleatória. Então,
+
+`$$Y_i=f(\cdot)+\varepsilon_i, \quad i=1,\ldots,n. \quad\quad\quad (1)$$`
+
+--
+
+O erro aleatório segue as seguintes suposições:
+
+- erros são **independentes**.
+
+--
+
+- erros seguem distribuição normal com **média** igual a zero e **variância** igual a `\(\sigma^2\)`.
+
+--
+
+- a variância é **constante**.
+
+---
+
+# &amp;#9989; Resíduo do modelo
+
+Sejam `\(y_1, y_2, \ldots, y_n\)` os valores observados no experimento e `\(\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_n\)` os valores preditos pelo modelo **estimado**. Então, o **resíduo** dd modelo linear `\((1)\)` é dado por
+
+`$$e_i=y_i-\hat{y}_i, \quad i=1,2,\ldots,n.$$`
+
+--
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Resíduo padronizado&lt;/b&gt;&lt;/p&gt;
+
+`$$d_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$`
+
+---
+
+# Exercício 2 - Pressupostos ANOVA &amp;#9997;
+
+&lt;div id="caixa1"&gt;
+   Dados de &lt;b&gt;zarcão de tinta&lt;/b&gt;.
+&lt;/div&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+- **Resíduos**
+
+
+
+
+- **Teste de Shapiro-Wilks**
+
 
 ---
 
@@ -213,7 +273,7 @@ class: center, middle
 
 ---
 
-# Exercício 2 - Teste de Tukey &amp;#9997;
+# Exercício 3 - Teste de Tukey &amp;#9997;
 
 &lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
 
@@ -265,9 +325,61 @@ class: center, middle
 
 # Teste de Tukey: método de aplicação &amp;#9997;
 
+
+
+&lt;table class="table" style="font-size: 30px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Método de aplicação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Força média &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Erro padrão &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; imersao &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.4667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2309 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; aspersao &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.5111 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1654 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
 ---
 
 # Teste de Tukey: tipo de zarcão &amp;#9997;
+
+&lt;table class="table" style="font-size: 30px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Tipo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Força média &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Erro padrão &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.3098 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.7833 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2574 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.6833 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2056 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
