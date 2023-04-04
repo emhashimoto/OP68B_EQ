@@ -141,10 +141,16 @@ Experimento em esquema fatorial 2x3 com três repetições
 
 .pull-left[
 &#128077; **Vantagens**
+
+- Permite avaliar dois ou mais fatores simultâneamente.
+
+- Permite avaliar o efeito da interação dos fatores.
 ]
 
 .pull-right[
 &#128078; **Desvantagens**
+
+- O número de combinações de níveis dos fatores **aumenta** com o número de níveis ou com o número de fatores.
 ]
 
 
@@ -153,7 +159,7 @@ Experimento em esquema fatorial 2x3 com três repetições
 # &#9989; Experimento em esquema de parcela subdividida
 
 <div id="caixa2">
-Experimento no qual um dos fatores, digamos <i>A</i>, é aleatorizado na parcela principal. Cada parcela principal é dividida em subparcelas de modo que os níves do fator <i>B</i> possam ser aleatorizados.
+Experimento no qual um dos fatores, digamos <i>A</i>, é aleatorizado na parcela principal (unidade experimental). Cada parcela principal é dividida em subparcelas de modo que os níves do fator <i>B</i> possam ser aleatorizados.
 </div>
 
 ---

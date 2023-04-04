@@ -59,6 +59,16 @@ p.big {
 
 # Aula Passada
 
+- Definição de experimentos em esquema fatoriais
+
+--
+
+- Modelos lineares da forma $Y=f(\cdot)+\varepsilon$
+
+--
+
+- Descrição da ANOVA
+
 ---
 
 # Objetivo da Aula &#127919;
@@ -139,6 +149,14 @@ class: center, middle
 
 ---
 
+# Gráfico de interação
+
+```{r , echo=FALSE, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics('figuras/plot_int.jpeg')
+```
+
+---
+
 <h2>ANOVA dos dados de zarcão de tinta</h2>
 
 <table style='width:105%; font-size:130%'>
@@ -194,6 +212,7 @@ class: center, middle
 library(readxl)
 library(tidyverse)
 dados <- read_xlsx("dados/dados_zarcao.xlsx")
+
 ```
 
 ```{r}
@@ -227,9 +246,11 @@ kable(anova_out, digits = 4,
 
 --
 
-* <p style="font-size:130%"><i>p</i>-valor</p>
+* <p style="font-size:130%"><b><i>p</i>-valor</b></p>
 
-
+<div id="caixa2">
+   É o menor nível de significância que conduz à rejeição de <i>H<sub>0</sub></i>, com os dados fornecidos.
+</div>
 
 ---
 
@@ -299,7 +320,7 @@ $$e_i=y_i-\hat{y}_i, \quad i=1,2,\ldots,n.$$
 
 * <p style="font-size:130%"><b>Resíduo padronizado</b></p>
 
-$$d_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
+$$rp_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
 
 ---
 
@@ -316,12 +337,12 @@ $$d_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
 
 ```{r}
 # resíduo padronizado
-d <- rstandard(ajuste)
+rp <- rstandard(ajuste)
 
 yhat <- predict(ajuste)
 df <- data.frame(Resposta = dados$forca,
                  Preditos = yhat,
-                 Residuo = d)
+                 Residuo = rp)
 df |> 
   head() |> 
   kable(digits = 4, align = c('c'),
@@ -372,7 +393,7 @@ $H_1:$ os resíduos seguem outra distribuição
 
 ```{r}
 # Teste de normalidade
-sw <- shapiro.test(d)
+sw <- shapiro.test(rp)
 ```
 
 ```{r}
@@ -397,8 +418,41 @@ class: center, middle
 # &#9989; Teste de Tukey
 
 <div id="caixa2">
-   É uma análise estatística que consiste na <b>decomposição</b> da variância total da variável resposta em componentes associados as fontes de variação.
+   É um teste de hipótese utilizado para comparar todo e qualquer diferença entre duas médias. 
 </div>
+
+<br>
+
+--
+
+- As hipóteses do teste são
+
+$H_0:$ as médias não são diferentes $vs$
+
+$H_1:$ as médias são diferentes
+
+--
+
+- Fixar o nível de significância $\alpha$
+
+---
+
+# &#9989; Teste de Tukey
+
+- Critério de rejeição
+
+Teste $\Upsilon$: rejeitar $H_0$ se $d_j\geq\Delta, \quad j=1,2,\ldots,k,$
+em que $k$ é o número de comparações dois à dois, $d_j=\hat{\mu}_i-\hat{\mu}_l \,(i\neq l)$ é a $j$-ésima diferença e  
+$$\Delta=q\sqrt{\frac{QM_{R}}{r}}$$
+é a diferença mínima significativa.
+
+--
+
+- Calcular as estatísticas do teste $d_j$.
+
+--
+
+- Conclusão
 
 ---
 
@@ -446,7 +500,7 @@ df_metodo |>
 
 # Teste de Tukey: tipo de zarcão &#9997;
 
-As hipóteses do teste são
+As **hipóteses** do teste são
 
 $H_0:$ as médias não são diferentes $vs$
 
@@ -457,10 +511,25 @@ $H_1:$ as médias são diferentes
 
 --
 
-* <p style="font-size:130%"><b>Critério de rejeição</b></p>
+<p style="font-size:130%">O <b>Critério de rejeição</b></p>
 
 
-Teste $\Upsilon$: rejeitar $H_0$ se $p$-valor for menor do que o nível de significância $\alpha$.
+Teste $\Upsilon$: rejeitar $H_0$ se $d_j\geq$
+
+---
+
+# Teste de Tukey: tipo de zarcão &#9997;
+
+As **estatísticas do teste** são:
+
+<br>
+<br>
+<br>
+<br>
+
+--
+
+**Conclusão**
 
 ---
 
