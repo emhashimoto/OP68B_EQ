@@ -220,11 +220,11 @@ class: center, middle
 &lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do teste &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
@@ -282,11 +282,11 @@ class: center, middle
 &lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do tesete &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
@@ -376,7 +376,9 @@ Sejam `\(y_1, y_2, \ldots, y_n\)` os valores observados no experimento e `\(\hat
 
 * &lt;p style="font-size:130%"&gt;&lt;b&gt;Resíduo padronizado&lt;/b&gt;&lt;/p&gt;
 
-`$$rp_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$`
+`$$rp_i=\frac{e_i}{\sqrt{QM_{R}(1-h_{ii})}}, \quad i=1,2,\ldots,n.$$`
+
+
 
 ---
 
@@ -398,37 +400,44 @@ Sejam `\(y_1, y_2, \ldots, y_n\)` os valores observados no experimento e `\(\hat
    &lt;th style="text-align:center;"&gt; Resposta &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Preditos &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Residuo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Resi_pad &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 4.0 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -0.2667 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; -1.1390 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 4.5 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2333 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 0.9966 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 4.3 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0333 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 0.1424 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 5.4 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1000 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 0.4271 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 4.9 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -0.4000 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; -1.7085 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 5.6 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.3000 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 1.2814 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -552,11 +561,11 @@ em que `\(k\)` é o número de comparações dois à dois, `\(d_j=\hat{\mu}_i-\h
 &lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; Causa de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do teste &lt;/th&gt;
    &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
@@ -641,7 +650,7 @@ As **hipóteses** do teste são
 &lt;p style="font-size:130%"&gt;O &lt;b&gt;Critério de rejeição&lt;/b&gt;&lt;/p&gt;
 
 
-Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(d_j\geq\)`
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(d_j\geq \Delta=q\sqrt{\frac{QM_{R}}{r}}\)`
 
 ---
 

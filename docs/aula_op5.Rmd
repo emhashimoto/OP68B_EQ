@@ -231,11 +231,11 @@ anova_out <- anova(ajuste) |>
   add_column(coluna1, .before = 'Df')
 
 kable(anova_out, digits = 4,
-             col.names = c('Causa de variação',
+             col.names = c('Fonte de variação',
                            'Graus de liberdade',
                            'Soma de quadrados',
                            'Quadrado médio',
-                           'Estatística',
+                           'Estatística do teste',
                            'p-valor'),
              align = c('c')) |> 
   kable_styling(font_size = 25)
@@ -260,11 +260,11 @@ kable(anova_out, digits = 4,
 options(knitr.kable.NA = '---')
 
 kable(anova_out, digits = 4,
-             col.names = c('Causa de variação',
+             col.names = c('Fonte de variação',
                            'Graus de liberdade',
                            'Soma de quadrados',
                            'Quadrado médio',
-                           'Estatística',
+                           'Estatística do tesete',
                            'p-valor'),
              align = c('c')) |> 
   kable_styling(font_size = 25)
@@ -320,7 +320,12 @@ $$e_i=y_i-\hat{y}_i, \quad i=1,2,\ldots,n.$$
 
 * <p style="font-size:130%"><b>Resíduo padronizado</b></p>
 
-$$rp_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
+$$rp_i=\frac{e_i}{\sqrt{QM_{R}(1-h_{ii})}}, \quad i=1,2,\ldots,n.$$
+
+```{r}
+# RSE é a raiz quadrada do QMR
+# h_ii é o elemento da diagonal (leverage) da matriz de projeção ortognal.
+```
 
 ---
 
@@ -336,13 +341,22 @@ $$rp_i=\frac{e_i}{\sqrt{QM_{R}}}, \quad i=1,2,\ldots,n.$$
 * <p style="font-size:130%"><b>Resíduo padronizado</b></p>
 
 ```{r}
+# resíduo
+e <- residuals(ajuste)
+
 # resíduo padronizado
 rp <- rstandard(ajuste)
+
+# resíduo padronizado manualmente
+#hats <- hatvalues(ajuste)
+#rse <- sqrt(deviance(ajuste)/df.residual(ajuste))
+#rp1 <- e/(rse*sqrt(1 - hats))
 
 yhat <- predict(ajuste)
 df <- data.frame(Resposta = dados$forca,
                  Preditos = yhat,
-                 Residuo = rp)
+                 Residuo = e,
+                 Resi_pad = rp)
 df |> 
   head() |> 
   kable(digits = 4, align = c('c'),
@@ -464,11 +478,11 @@ $$\Delta=q\sqrt{\frac{QM_{R}}{r}}$$
 options(knitr.kable.NA = '---')
 
 kable(anova_out, digits = 4,
-             col.names = c('Causa de variação',
+             col.names = c('Fonte de variação',
                            'Graus de liberdade',
                            'Soma de quadrados',
                            'Quadrado médio',
-                           'Estatística',
+                           'Estatística do teste',
                            'p-valor'),
              align = c('c')) |> 
   kable_styling(font_size = 25)
@@ -514,7 +528,7 @@ $H_1:$ as médias são diferentes
 <p style="font-size:130%">O <b>Critério de rejeição</b></p>
 
 
-Teste $\Upsilon$: rejeitar $H_0$ se $d_j\geq$
+Teste $\Upsilon$: rejeitar $H_0$ se $d_j\geq \Delta=q\sqrt{\frac{QM_{R}}{r}}$
 
 ---
 
