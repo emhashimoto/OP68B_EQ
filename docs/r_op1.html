@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>OP68B - Planejamento e análise de experimentos</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Profa. Patricia e Profa. Elizabeth" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="meu-tema-op2.css" type="text/css" />
+    <link rel="stylesheet" href="box2.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# OP68B - Planejamento e análise de experimentos
+]
+.subtitle[
+## Pressupostos da ANOVA e teste de Tukey
+]
+.author[
+### Profa. Patricia e Profa. Elizabeth
+]
+
+---
+
+
+
+
+&lt;style&gt; 
+#caixa1 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px blue;
+  font-size: 20pt;
+}
+#caixa2 {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px green;
+  font-size: 20pt;
+}
+div {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+  float: center;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+p.big {
+  line-height: 0.75;
+}
+&lt;/style&gt;
+
+# Aula Passada
+
+- Definição de experimentos em esquema fatoriais
+
+--
+
+- Modelos lineares da forma `\(Y=f(\cdot)+\varepsilon\)`
+
+--
+
+- Descrição da ANOVA
+
+---
+
+# Objetivo da Aula &amp;#127919;
+
+.pull-left[
+&lt;img src="https://media.giphy.com/media/ysyMmtuCA0AK9diW0I/giphy.gif" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+.pull-right[
+
+&amp;#128309; &lt;b&gt;Terminar&lt;/b&gt; a ANOVA.
+{{content}}
+]
+
+--
+
+&amp;#128309; Teste de comparação múltipla: &lt;b&gt;teste de Tukey&lt;/b&gt;.
+{{content}}
+
+--
+
+&amp;#128309; &lt;b&gt;Interpretar&lt;/b&gt; os resultados.
+{{content}}
+
+--
+
+&amp;#128309; Análise de &lt;b&gt;resíduos&lt;/b&gt;.
+{{content}}
+
+--
+
+&amp;#128309; &lt;b&gt;Interpretar&lt;/b&gt; os resultados.
+
+---
+
+class: center, middle
+
+# Experimentos em Esquema Fatorial
+
+---
+
+# Exercício 1 &amp;#9997;
+
+&lt;div id="caixa1"&gt;
+   Um experimento no esquema fatorial 2x3 foi realizado para investigar o efeito do tipo de zarcão e do método de aplicação na adesão da tinta. Três espécimes foram pintados com cada um dos zarcões, usando cada um dos métodos de aplicação. Uma camada de tinta foi aplicada e a força de adesão foi medida. Os dados do experimento são apresentados na seguinte tabela.
+&lt;/div&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+&lt;table style="width:110%; font-size:140%"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th colspan="2" align='center'&gt;Método de aplicação&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Tipo de zarcão&lt;/th&gt;
+    &lt;th&gt;Imersão&lt;/th&gt;
+    &lt;th&gt;Aspersão&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;1&lt;/td&gt;
+    &lt;td&gt;4.0, 4.5, 4.3&lt;/td&gt;
+    &lt;td&gt;5.4, 4.9, 5.6&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;2&lt;/td&gt;
+    &lt;td&gt;5.6, 4.9, 5.4&lt;/td&gt;
+    &lt;td&gt;5.8, 6.1, 6.3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="center"&gt;3&lt;/td&gt;
+    &lt;td&gt;3.8, 3.7, 4.0&lt;/td&gt;
+    &lt;td&gt;5.5, 5.0, 5.0&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Gráfico de interação
+
+&lt;img src="figuras/plot_int.jpeg" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
+
+&lt;table style='width:105%; font-size:130%'&gt;
+  &lt;tr&gt;
+    &lt;th align="center"&gt;Fonte de &lt;br&gt;variação&lt;/th&gt;
+    &lt;th align="center"&gt;Grau de &lt;br&gt;liberdade&lt;/th&gt;
+    &lt;th align="center"&gt;Soma de &lt;br&gt;quadrados&lt;/th&gt;
+    &lt;th align="center"&gt;Quadrado &lt;br&gt;médio&lt;/th&gt;
+    &lt;th align="center"&gt;Estatística &lt;br&gt;do teste&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Método de &lt;br&gt;aplicação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Tipo de &lt;br&gt;zarcão&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interação&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Resíduo&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+    &lt;td&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# &amp;#128187; Saída do *software*  R 
+
+
+
+
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+--
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;&lt;i&gt;p&lt;/i&gt;-valor&lt;/b&gt;&lt;/p&gt;
+
+&lt;div id="caixa2"&gt;
+   É o menor nível de significância que conduz à rejeição de &lt;i&gt;H&lt;sub&gt;0&lt;/sub&gt;&lt;/i&gt;, com os dados fornecidos.
+&lt;/div&gt;
+
+---
+
+# &amp;#128187; Saída do *software*  R 
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do tesete &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Critério de rejeição&lt;/b&gt;&lt;/p&gt;
+
+
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(p\)`-valor for menor do que o nível de significância `\(\alpha\)`.
+
+
+---
+
+class: center, middle
+
+# Verificação dos Pressupostos da ANOVA
+
+---
+
+# &amp;#9989; Modelo linear
+
+Seja `\(Y_1, Y_2, \ldots, Y_n\)` uma amostra aleatória. Então,
+
+`$$Y_i=f(\cdot)+\varepsilon_i, \quad i=1,\ldots,n. \quad\quad\quad (1)$$`
+
+--
+
+O erro aleatório segue as seguintes suposições:
+
+- erros são **independentes**.
+
+--
+
+- erros seguem distribuição normal com **média** igual a zero e **variância** igual a `\(\sigma^2\)`.
+
+--
+
+- a variância é **constante**.
+
+---
+
+# &amp;#9989; Resíduo do modelo
+
+Sejam `\(y_1, y_2, \ldots, y_n\)` os valores observados no experimento e `\(\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_n\)` os valores preditos pelo modelo **estimado**. Então, o **resíduo** dd modelo linear `\((1)\)` é dado por
+
+`$$e_i=y_i-\hat{y}_i, \quad i=1,2,\ldots,n.$$`
+
+--
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Resíduo padronizado&lt;/b&gt;&lt;/p&gt;
+
+`$$rp_i=\frac{e_i}{\sqrt{QM_{R}(1-h_{ii})}}, \quad i=1,2,\ldots,n.$$`
+
+
+
+---
+
+# Exercício 2 - Pressupostos ANOVA &amp;#9997;
+
+&lt;div id="caixa1"&gt;
+   Dados de &lt;b&gt;zarcão de tinta&lt;/b&gt;.
+&lt;/div&gt;
+
+&lt;p class="big"&gt;
+&lt;/p&gt;
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Resíduo padronizado&lt;/b&gt;&lt;/p&gt;
+
+&lt;table class="table" style="font-size: 20px; margin-left: auto; margin-right: auto;"&gt;
+&lt;caption style="font-size: initial !important;"&gt;As seis primeiras linhas&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Resposta &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Preditos &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Residuo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Resi_pad &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -0.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -1.1390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2333 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9966 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.2667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0333 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1424 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.4271 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -0.4000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; -1.7085 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 5.6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.3000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.2814 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Teste de homogeneidade de variâncias&lt;/b&gt;: teste de Levene&lt;/p&gt;
+
+As hipóteses do teste são:
+
+`\(H_0:\)` a variância é constante `\(vs\)`
+
+`\(H_1:\)` a variância não é constante 
+
+--
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Levene &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.17 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9688 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+* &lt;p style="font-size:130%"&gt;&lt;b&gt;Teste de normalidade&lt;/b&gt;: teste de Shapiro-Wilks&lt;/p&gt;
+
+As hipóteses do teste são
+
+`\(H_0:\)` os resíduos seguem distribuição normal `\(vs\)`
+
+`\(H_1:\)` os resíduos seguem outra distribuição
+
+--
+
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Shapiro-Wilk &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.937 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2575 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+class: center, middle
+
+# Teste de Comparação Múltipla
+
+---
+
+# &amp;#9989; Teste de Tukey
+
+&lt;div id="caixa2"&gt;
+   É um teste de hipótese utilizado para comparar todo e qualquer diferença entre duas médias. 
+&lt;/div&gt;
+
+&lt;br&gt;
+
+--
+
+- As hipóteses do teste são
+
+`\(H_0:\)` as médias não são diferentes `\(vs\)`
+
+`\(H_1:\)` as médias são diferentes
+
+--
+
+- Fixar o nível de significância `\(\alpha\)`
+
+---
+
+# &amp;#9989; Teste de Tukey
+
+- Critério de rejeição
+
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(d_j\geq\Delta, \quad j=1,2,\ldots,k,\)`
+em que `\(k\)` é o número de comparações dois à dois, `\(d_j=\hat{\mu}_i-\hat{\mu}_l \,(i\neq l)\)` é a `\(j\)`-ésima diferença e  
+`$$\Delta=q\sqrt{\frac{QM_{R}}{r}}$$`
+é a diferença mínima significativa.
+
+--
+
+- Calcular as estatísticas do teste `\(d_j\)`.
+
+--
+
+- Conclusão
+
+---
+
+# Exercício 3 - Teste de Tukey &amp;#9997;
+
+&lt;h2&gt;ANOVA dos dados de zarcão de tinta&lt;/h2&gt;
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Fonte de variação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Graus de liberdade &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Soma de quadrados &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Quadrado médio &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Estatística do teste &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; p-valor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Método &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.9089 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 59.7027 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Tipo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5811 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.2906 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 27.8581 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Interação &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2411 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1206 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.4662 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2693 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; Resíduo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.9867 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.0822 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; --- &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+  
+---
+
+# Teste de Tukey: método de aplicação &amp;#9997;
+
+&lt;table class="table" style="font-size: 30px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Método de aplicação &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Força média &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Erro padrão &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; imersao &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.4667 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2309 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; aspersao &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.5111 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.1654 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+# Teste de Tukey: tipo de zarcão &amp;#9997;
+
+As **hipóteses** do teste são
+
+`\(H_0:\)` as médias não são diferentes `\(vs\)`
+
+`\(H_1:\)` as médias são diferentes
+
+
+&lt;br&gt;
+
+--
+
+&lt;p style="font-size:130%"&gt;O &lt;b&gt;Critério de rejeição&lt;/b&gt;&lt;/p&gt;
+
+
+Teste `\(\Upsilon\)`: rejeitar `\(H_0\)` se `\(d_j\geq \Delta=q\sqrt{\frac{QM_{R}}{r}}\)`
+
+---
+
+# Teste de Tukey: tipo de zarcão &amp;#9997;
+
+As **estatísticas do teste** são:
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+--
+
+**Conclusão**
+
+---
+
+# Teste de Tukey: tipo de zarcão &amp;#9997;
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Tipo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Força média &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Erro padrão &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.5000 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.3098 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4.7833 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2574 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; T2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5.6833 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0.2056 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig9.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Referências &amp;#128218;
+
+&lt;img src="figuras/fig7.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Próximas aulas
+
+
+&lt;div id="caixa1"&gt;
+ &lt;div&gt; Planejamento e condução de experimentos
+ &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmIyNjliMDQ5NjJjNmEzOWExYzNmMThmMDIyNjExOGVmYzMzN2UwYyZjdD1n/9uIjwFgumdKSw8gzpV/giphy.gif" width="80%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": false,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
